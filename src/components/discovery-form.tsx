@@ -38,9 +38,17 @@ export function DiscoveryForm() {
   const formId = useId();
   const [values, setValues] = useState(initial);
   const [errors, setErrors] = useState<FieldErrors>({});
+  const [attempted, setAttempted] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
   const [serverMessage, setServerMessage] = useState("");
   const [calendarUrl, setCalendarUrl] = useState<string | undefined>();
+
+  function syncValues(next: DiscoveryPayload) {
+    setValues(next);
+    if (!attempted) return;
+    const result = validateDiscovery(next);
+    setErrors(result.ok ? {} : result.errors);
+  }
 
   const ids = useMemo(
     () => ({
@@ -57,16 +65,15 @@ export function DiscoveryForm() {
   );
 
   function toggleStack(item: string) {
-    setValues((current) => ({
-      ...current,
-      stack: current.stack.includes(item)
-        ? current.stack.filter((entry) => entry !== item)
-        : [...current.stack, item],
-    }));
+    const stack = values.stack.includes(item)
+      ? values.stack.filter((entry) => entry !== item)
+      : [...values.stack, item];
+    syncValues({ ...values, stack });
   }
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setAttempted(true);
     setServerMessage("");
     setCalendarUrl(undefined);
 
@@ -109,6 +116,7 @@ export function DiscoveryForm() {
         : (payload.bookingUrl ?? buildBookingUrl(result.value.name, result.value.email));
 
       setValues(initial);
+      setAttempted(false);
       setCalendarUrl(bookingUrl);
       setStatus("success");
 
@@ -157,6 +165,7 @@ export function DiscoveryForm() {
     );
   }
 
+  const shown = attempted ? errors : {};
   const inputClass =
     "mt-1.5 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:placeholder:text-zinc-600";
 
@@ -172,12 +181,12 @@ export function DiscoveryForm() {
             name="name"
             autoComplete="name"
             value={values.name}
-            onChange={(event) => setValues((current) => ({ ...current, name: event.target.value }))}
+            onChange={(event) => syncValues({ ...values, name: event.target.value })}
             className={inputClass}
-            aria-invalid={Boolean(errors.name)}
-            aria-describedby={errors.name ? `${ids.name}-error` : undefined}
+            aria-invalid={Boolean(shown.name)}
+            aria-describedby={shown.name ? `${ids.name}-error` : undefined}
           />
-          <FieldError id={`${ids.name}-error`} message={errors.name} />
+          <FieldError id={`${ids.name}-error`} message={shown.name} />
         </div>
         <div>
           <label htmlFor={ids.email} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
@@ -186,16 +195,16 @@ export function DiscoveryForm() {
           <input
             id={ids.email}
             name="email"
-            type="email"
+            type="text"
             autoComplete="email"
             inputMode="email"
             value={values.email}
-            onChange={(event) => setValues((current) => ({ ...current, email: event.target.value }))}
+            onChange={(event) => syncValues({ ...values, email: event.target.value })}
             className={inputClass}
-            aria-invalid={Boolean(errors.email)}
-            aria-describedby={errors.email ? `${ids.email}-error` : undefined}
+            aria-invalid={Boolean(shown.email)}
+            aria-describedby={shown.email ? `${ids.email}-error` : undefined}
           />
-          <FieldError id={`${ids.email}-error`} message={errors.email} />
+          <FieldError id={`${ids.email}-error`} message={shown.email} />
         </div>
       </div>
 
@@ -209,12 +218,12 @@ export function DiscoveryForm() {
             name="company"
             autoComplete="organization"
             value={values.company}
-            onChange={(event) => setValues((current) => ({ ...current, company: event.target.value }))}
+            onChange={(event) => syncValues({ ...values, company: event.target.value })}
             className={inputClass}
-            aria-invalid={Boolean(errors.company)}
-            aria-describedby={errors.company ? `${ids.company}-error` : undefined}
+            aria-invalid={Boolean(shown.company)}
+            aria-describedby={shown.company ? `${ids.company}-error` : undefined}
           />
-          <FieldError id={`${ids.company}-error`} message={errors.company} />
+          <FieldError id={`${ids.company}-error`} message={shown.company} />
         </div>
         <div>
           <label htmlFor={ids.role} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
@@ -224,10 +233,10 @@ export function DiscoveryForm() {
             id={ids.role}
             name="role"
             value={values.role}
-            onChange={(event) => setValues((current) => ({ ...current, role: event.target.value }))}
+            onChange={(event) => syncValues({ ...values, role: event.target.value })}
             className={inputClass}
-            aria-invalid={Boolean(errors.role)}
-            aria-describedby={errors.role ? `${ids.role}-error` : undefined}
+            aria-invalid={Boolean(shown.role)}
+            aria-describedby={shown.role ? `${ids.role}-error` : undefined}
           >
             <option value="">Select role</option>
             {roles.map((role) => (
@@ -236,7 +245,7 @@ export function DiscoveryForm() {
               </option>
             ))}
           </select>
-          <FieldError id={`${ids.role}-error`} message={errors.role} />
+          <FieldError id={`${ids.role}-error`} message={shown.role} />
         </div>
       </div>
 
@@ -248,10 +257,10 @@ export function DiscoveryForm() {
           id={ids.teamSize}
           name="teamSize"
           value={values.teamSize}
-          onChange={(event) => setValues((current) => ({ ...current, teamSize: event.target.value }))}
+          onChange={(event) => syncValues({ ...values, teamSize: event.target.value })}
           className={inputClass}
-          aria-invalid={Boolean(errors.teamSize)}
-          aria-describedby={errors.teamSize ? `${ids.teamSize}-error` : undefined}
+          aria-invalid={Boolean(shown.teamSize)}
+          aria-describedby={shown.teamSize ? `${ids.teamSize}-error` : undefined}
         >
           <option value="">Select size</option>
           {teamSizes.map((size) => (
@@ -260,10 +269,10 @@ export function DiscoveryForm() {
             </option>
           ))}
         </select>
-        <FieldError id={`${ids.teamSize}-error`} message={errors.teamSize} />
+        <FieldError id={`${ids.teamSize}-error`} message={shown.teamSize} />
       </div>
 
-      <fieldset aria-describedby={errors.stack ? `${ids.stack}-error` : undefined}>
+      <fieldset aria-describedby={shown.stack ? `${ids.stack}-error` : undefined}>
         <legend className="text-sm font-medium text-zinc-800 dark:text-zinc-200">Current stack</legend>
         <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
           {stacks.map((item) => {
@@ -296,7 +305,7 @@ export function DiscoveryForm() {
             );
           })}
         </div>
-        <FieldError id={`${ids.stack}-error`} message={errors.stack} />
+        <FieldError id={`${ids.stack}-error`} message={shown.stack} />
       </fieldset>
 
       <div>
@@ -308,13 +317,13 @@ export function DiscoveryForm() {
           name="challenge"
           rows={5}
           value={values.challenge}
-          onChange={(event) => setValues((current) => ({ ...current, challenge: event.target.value }))}
+          onChange={(event) => syncValues({ ...values, challenge: event.target.value })}
           className={`${inputClass} resize-y`}
           placeholder="Where the suite, pipeline, or ownership model is failing — be specific."
-          aria-invalid={Boolean(errors.challenge)}
-          aria-describedby={errors.challenge ? `${ids.challenge}-error` : undefined}
+          aria-invalid={Boolean(shown.challenge)}
+          aria-describedby={shown.challenge ? `${ids.challenge}-error` : undefined}
         />
-        <FieldError id={`${ids.challenge}-error`} message={errors.challenge} />
+        <FieldError id={`${ids.challenge}-error`} message={shown.challenge} />
       </div>
 
       <div>
@@ -325,12 +334,10 @@ export function DiscoveryForm() {
           id={ids.preferredTime}
           name="preferredTime"
           value={values.preferredTime}
-          onChange={(event) =>
-            setValues((current) => ({ ...current, preferredTime: event.target.value }))
-          }
+          onChange={(event) => syncValues({ ...values, preferredTime: event.target.value })}
           className={inputClass}
-          aria-invalid={Boolean(errors.preferredTime)}
-          aria-describedby={errors.preferredTime ? `${ids.preferredTime}-error` : undefined}
+          aria-invalid={Boolean(shown.preferredTime)}
+          aria-describedby={shown.preferredTime ? `${ids.preferredTime}-error` : undefined}
         >
           <option value="">Select a window</option>
           {timeWindows.map((window) => (
@@ -339,7 +346,7 @@ export function DiscoveryForm() {
             </option>
           ))}
         </select>
-        <FieldError id={`${ids.preferredTime}-error`} message={errors.preferredTime} />
+        <FieldError id={`${ids.preferredTime}-error`} message={shown.preferredTime} />
       </div>
 
       <div hidden className="hidden" aria-hidden="true">
