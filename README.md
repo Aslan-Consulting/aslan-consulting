@@ -57,13 +57,13 @@ Success:
 
 `bookingUrl` is omitted when calendar env is unset, or when the honeypot is filled.
 
-Error (`400` / `500`):
+Error (`400`):
 
 ```json
-{ "ok": false, "message": "Check the highlighted fields.", "errors": { "email": "Enter a valid work email." } }
+{ "ok": false, "message": "Check the highlighted fields.", "errors": { "email": "Enter a valid email." } }
 ```
 
-`data/leads.jsonl` is gitignored. On serverless hosts the filesystem is ephemeral — wire the handler to email or a CRM before production traffic.
+`data/leads.jsonl` is gitignored. File-write failures (typical on Vercel) are logged and do not fail the request. If `RESEND_API_KEY`, `DISCOVERY_NOTIFY_EMAIL`, and `DISCOVERY_FROM_EMAIL` are set, the handler emails the lead instead. Otherwise the submit still returns `{ ok: true }` and the lead is in server logs.
 
 ## Open Graph
 

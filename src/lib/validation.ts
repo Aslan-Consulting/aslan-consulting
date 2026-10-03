@@ -48,9 +48,9 @@ export function validateDiscovery(
   const preferredTime = asString(data.preferredTime);
   const website = asString(data.website);
 
-  if (name.length < 2) errors.name = "Enter your full name.";
-  if (!EMAIL_RE.test(email)) errors.email = "Enter a valid work email.";
-  if (company.length < 2) errors.company = "Enter your company name.";
+  if (!name) errors.name = "Enter your name.";
+  if (!EMAIL_RE.test(email)) errors.email = "Enter a valid email.";
+  if (!company) errors.company = "Enter your company.";
   if (!roles.includes(role as (typeof roles)[number])) {
     errors.role = "Select the closest role.";
   }
@@ -60,11 +60,8 @@ export function validateDiscovery(
   if (stack.length === 0 || stack.some((item) => !stacks.includes(item as (typeof stacks)[number]))) {
     errors.stack = "Select at least one current stack.";
   }
-  if (challenge.length < 24) {
-    errors.challenge = "Give us at least a sentence on the constraint.";
-  }
-  if (challenge.length > 2000) {
-    errors.challenge = "Keep this under 2,000 characters.";
+  if (!challenge) {
+    errors.challenge = "Enter the current constraint.";
   }
   if (!timeWindows.includes(preferredTime as (typeof timeWindows)[number])) {
     errors.preferredTime = "Choose a preferred window.";

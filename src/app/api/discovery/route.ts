@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { DiscoveryApiResponse } from "@/lib/api";
 import { buildBookingUrl } from "@/lib/booking";
 import { storeLead } from "@/lib/leads";
+import { notifyLeadByEmail } from "@/lib/notify";
 import { validateDiscovery } from "@/lib/validation";
 
 export async function POST(request: Request) {
@@ -34,14 +35,12 @@ export async function POST(request: Request) {
   }
 
   try {
-    await storeLead(result.value);
+    const persisted = await storeLead(result.value);
+    if (!persisted) {
+      await notifyLeadByEmail(result.value);
+    }
   } catch (error) {
-    console.error("[discovery] failed to persist lead", error);
-    const payload: DiscoveryApiResponse = {
-      ok: false,
-      message: "We received the request but could not store it. Email us or retry in a moment.",
-    };
-    return NextResponse.json(payload, { status: 500 });
+    console.error("[discovery] persist/notify failed", error);
   }
 
   const bookingUrl = buildBookingUrl(result.value.name, result.value.email);
