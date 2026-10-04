@@ -1,15 +1,28 @@
 export const site = {
   name: "Aslan Consulting LLC",
+  legalName: "Aslan Consulting, LLC",
   shortName: "Aslan",
   tagline: "Centralized test architecture. Distributed engineering pods.",
   description:
     "Boutique QA and SDET firm for engineering directors. We design centralized Playwright architectures and staff distributed pods so product orgs ship with a flake SLO, not a hope.",
+  email: "majdaslan4@gmail.com",
 } as const;
 
 export const nav = [
-  { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#discovery", label: "Discovery" },
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About" },
+  { href: "/#pricing", label: "Pricing" },
+] as const;
+
+export const footerQuickLinks = [
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About" },
+  { href: "/#discovery", label: "Contact" },
+] as const;
+
+export const legalLinks = [
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms of Service" },
 ] as const;
 
 export const metrics = [

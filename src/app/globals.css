@@ -117,6 +117,38 @@ button {
   animation-delay: 280ms;
 }
 
+.legal-copy {
+  font-size: 0.975rem;
+  line-height: 1.7;
+  color: var(--fg-muted);
+}
+
+.legal-copy p + p,
+.legal-copy h2 + p {
+  margin-top: 0.85rem;
+}
+
+.legal-copy h2 {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.legal-copy a {
+  color: #0891b2;
+  text-underline-offset: 3px;
+}
+
+.legal-copy a:hover {
+  text-decoration: underline;
+}
+
+.dark .legal-copy a {
+  color: #22d3ee;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
