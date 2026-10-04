@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/aslan-logo.png",
-    apple: "/aslan-logo.png",
+    icon: [{ url: "/aslan-mark.svg", type: "image/svg+xml" }, { url: "/icon.png" }],
+    apple: "/icon.png",
   },
 };
 

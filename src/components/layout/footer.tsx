@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-zinc-200/80 dark:border-zinc-800/80">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-3">
         <div className="max-w-sm">
-          <BrandLogo className="h-24 w-auto rounded-xl" />
+          <BrandLogo className="h-28 w-auto" />
           <p className="mt-4 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
             {site.tagline}
           </p>

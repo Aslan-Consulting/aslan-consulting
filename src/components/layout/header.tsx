@@ -21,12 +21,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-zinc-200/50 bg-zinc-50/55 backdrop-blur-xl dark:border-zinc-800/40 dark:bg-zinc-950/50">
-      <Container className="flex h-[4.5rem] items-center justify-between gap-6">
+      <Container className="flex h-[6.5rem] items-center justify-between gap-6">
         <a
           href="/"
-          className="flex shrink-0 items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-950"
+          className="flex h-full shrink-0 items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-950"
         >
-          <BrandLogo className="h-12 w-auto" priority />
+          <BrandLogo className="h-[5.5rem] w-auto" priority />
           <span className="sr-only">Aslan Consulting</span>
         </a>
 
