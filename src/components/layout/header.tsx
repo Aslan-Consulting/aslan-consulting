@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { BrandLogo } from "@/components/ui/brand-logo";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { nav, site } from "@/lib/site";
+import { nav } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -20,19 +21,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-zinc-200/50 bg-zinc-50/55 backdrop-blur-xl dark:border-zinc-800/40 dark:bg-zinc-950/50">
-      <Container className="flex h-16 items-center justify-between gap-6">
+      <Container className="flex h-[4.5rem] items-center justify-between gap-6">
         <a
           href="/"
-          className="group flex items-center gap-3 text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-50 dark:text-zinc-50 dark:focus-visible:ring-offset-zinc-950"
+          className="flex shrink-0 items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-950"
         >
-          <span className="leading-none">
-            <span className="block text-[0.95rem] font-bold tracking-[0.2em]">ASLAN</span>
-            <span className="mt-1 block h-px w-8 bg-cyan-600/70 dark:bg-cyan-400/60" />
-          </span>
-          <span className="hidden text-[0.65rem] font-medium tracking-[0.18em] text-zinc-500 uppercase sm:block">
-            Consulting
-          </span>
-          <span className="sr-only">{site.legalName}</span>
+          <BrandLogo className="h-12 w-auto" priority />
+          <span className="sr-only">Aslan Consulting</span>
         </a>
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Primary">

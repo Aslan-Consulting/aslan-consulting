@@ -53,6 +53,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/aslan-logo.png",
+    apple: "/aslan-logo.png",
+  },
 };
 
 const themeInit = `(function(){try{var k='aslan-theme';var t=localStorage.getItem(k)||'dark';var d=t==='dark'||(t==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){document.documentElement.classList.add('dark');}})();`;
