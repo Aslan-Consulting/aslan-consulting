@@ -46,13 +46,14 @@ export function GET() {
               display: "flex",
               flexDirection: "column",
               marginTop: 36,
-              fontSize: 58,
-              lineHeight: 1.12,
+              fontSize: 48,
+              lineHeight: 1.15,
               fontWeight: 700,
               letterSpacing: "-0.04em",
+              maxWidth: 980,
             }}
           >
-            Software testing, explained simply.
+            A testing system your team can own, built to ship faster with fewer flakes.
           </div>
         </div>
         <div

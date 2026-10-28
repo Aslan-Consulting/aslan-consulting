@@ -41,10 +41,10 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden md:block">
-            <ButtonLink href="/#discovery">Book a call</ButtonLink>
-          </div>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ButtonLink href="/#discovery" className="px-3 py-2 sm:px-5 sm:py-2.5">
+            Book a call
+          </ButtonLink>
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 text-zinc-900 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"

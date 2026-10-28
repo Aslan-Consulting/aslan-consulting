@@ -8,7 +8,7 @@ export function getMetadataBase(): URL {
 }
 
 export const ogCopy = {
-  title: "Testing Explained - Software testing, explained simply",
+  title: "Testing Explained | A testing system your team can own",
   description:
-    "Testing Explained helps engineering teams own their Playwright test architecture, kill flaky tests, and ship faster. One testing lesson every day on Instagram.",
+    "Testing Explained builds the Playwright test architecture your team can own, so you ship faster with fewer flakes.",
 } as const;

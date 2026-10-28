@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Frame } from "@/components/ui/frame";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const tiers = [
@@ -42,6 +43,7 @@ export function Pricing() {
   return (
     <section id="pricing" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
       <Container>
+        <Reveal>
         <SectionHeading
           kicker="Pricing"
           title="Setup retainers and monthly ownership. Stated as numbers."
@@ -99,6 +101,7 @@ export function Pricing() {
         <ButtonLink href="#discovery" className="mt-6">
           Book a discovery call
         </ButtonLink>
+        </Reveal>
       </Container>
     </section>
   );

@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Frame } from "@/components/ui/frame";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const services = [
@@ -69,6 +70,7 @@ export function Services() {
   return (
     <section id="services" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
       <Container>
+        <Reveal>
         <SectionHeading
           kicker="Services"
           title="Architecture first. Capacity second."
@@ -97,6 +99,7 @@ export function Services() {
             </Frame>
           ))}
         </div>
+        </Reveal>
       </Container>
     </section>
   );
