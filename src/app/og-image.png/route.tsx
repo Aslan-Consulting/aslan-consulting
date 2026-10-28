@@ -12,8 +12,8 @@ export function GET() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#09090b",
-          color: "#fafafa",
+          background: "#f7f6f2",
+          color: "#18181b",
           padding: "72px 80px",
           fontFamily: "ui-sans-serif, system-ui, sans-serif",
         }}
@@ -23,8 +23,7 @@ export function GET() {
             display: "flex",
             position: "absolute",
             inset: 0,
-            background:
-              "radial-gradient(ellipse 70% 55% at 50% -10%, rgba(6,182,212,0.16), transparent 58%)",
+            background: "radial-gradient(ellipse 70% 55% at 50% -10%, rgba(34,197,94,0.16), transparent 58%)",
           }}
         />
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -33,35 +32,34 @@ export function GET() {
               display: "flex",
               alignItems: "center",
               gap: 14,
-              color: "#22d3ee",
+              color: "#15803d",
               fontSize: 22,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
               fontWeight: 600,
             }}
           >
-            Aslan Consulting LLC
+            Testing Explained
           </div>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               marginTop: 36,
-              fontSize: 64,
+              fontSize: 58,
               lineHeight: 1.12,
               fontWeight: 700,
               letterSpacing: "-0.04em",
             }}
           >
-            <div>Centralize the test platform.</div>
-            <div style={{ color: "#a1a1aa" }}>Distribute the engineers.</div>
+            Software testing, explained simply.
           </div>
         </div>
         <div
           style={{
             display: "flex",
             gap: 36,
-            color: "#22d3ee",
+            color: "#16a34a",
             fontSize: 22,
             fontWeight: 600,
           }}

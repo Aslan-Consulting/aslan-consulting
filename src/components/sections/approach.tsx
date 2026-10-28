@@ -15,16 +15,16 @@ const steps = [
   {
     index: "03",
     title: "Staff pods against it",
-    body: "Distributed SDET capacity runs on the platform we just made non-optional. Ownership stays with Aslan or transfers with a runbook — your call.",
+    body: "Distributed SDET capacity runs on the platform we just made non-optional. Ownership stays with Testing Explained or transfers with a runbook — your call.",
   },
 ];
 
 export function Approach() {
   return (
-    <section className="border-b border-zinc-200/80 py-20 sm:py-24 dark:border-zinc-800/80">
+    <section id="how-it-works" className="scroll-mt-24 border-b border-zinc-200/80 bg-[#f7f6f2] py-20 sm:py-24">
       <Container>
         <SectionHeading
-          kicker="Engagement"
+          kicker="How it works"
           title="How a director should buy quality work."
           description="Short discovery. Written architecture. Then either a standing platform, embedded pods, or both. No retainers that exist to 'stay in the mix.'"
         />
@@ -32,15 +32,15 @@ export function Approach() {
           {steps.map((step) => (
             <li
               key={step.index}
-              className="rounded-xl border border-zinc-200/80 bg-white/50 p-6 dark:border-zinc-800/80 dark:bg-zinc-900/40"
+              className="rounded-xl border border-zinc-200/80 bg-white p-6"
             >
-              <p className="text-xs font-medium tracking-[0.14em] text-cyan-600 uppercase dark:text-cyan-400">
+              <p className="text-xs font-medium tracking-[0.14em] text-green-700 uppercase">
                 {step.index}
               </p>
-              <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+              <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-900">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">{step.body}</p>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-500">{step.body}</p>
             </li>
           ))}
         </ol>

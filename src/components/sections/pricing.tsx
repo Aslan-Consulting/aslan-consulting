@@ -40,7 +40,7 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="scroll-mt-24 border-b border-zinc-200/80 py-20 sm:py-24 dark:border-zinc-800/80">
+    <section id="pricing" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
       <Container>
         <SectionHeading
           kicker="Pricing"
@@ -53,32 +53,32 @@ export function Pricing() {
               key={tier.name}
               className={`flex flex-col p-6 sm:p-8 ${
                 tier.featured
-                  ? "ring-1 ring-cyan-400/25 dark:shadow-[0_0_40px_-12px_rgba(6,182,212,0.25)]"
+                  ? "ring-1 ring-green-500/25"
                   : ""
               }`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
                     {tier.name}
                   </h3>
-                  <p className="mt-1 text-xs font-medium tracking-[0.12em] text-cyan-700 uppercase dark:text-cyan-400">
+                  <p className="mt-1 text-xs font-medium tracking-[0.12em] text-green-700 uppercase">
                     {tier.featured ? "Ongoing" : "Engagement"}
                   </p>
                 </div>
                 {tier.featured ? (
-                  <span className="rounded-full border border-zinc-200 bg-zinc-100 px-2.5 py-1 text-[0.65rem] font-medium tracking-wide text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-300">
+                  <span className="rounded-full border border-zinc-200 bg-zinc-100 px-2.5 py-1 text-[0.65rem] font-medium tracking-wide text-zinc-600">
                     Most orgs keep this
                   </span>
                 ) : null}
               </div>
-              <p className="mt-6 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
+              <p className="mt-6 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
                 {tier.price}
-                {tier.featured ? <span className="text-lg font-medium text-zinc-500 dark:text-zinc-400">/mo</span> : null}
+                {tier.featured ? <span className="text-lg font-medium text-zinc-500">/mo</span> : null}
               </p>
-              <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{tier.cadence}</p>
-              <p className="mt-5 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">{tier.summary}</p>
-              <ul className="mt-6 flex-1 space-y-2.5 text-sm text-zinc-700 dark:text-zinc-300">
+              <p className="mt-1 text-sm text-zinc-500">{tier.cadence}</p>
+              <p className="mt-5 text-sm leading-relaxed text-zinc-500">{tier.summary}</p>
+              <ul className="mt-6 flex-1 space-y-2.5 text-sm text-zinc-700">
                 {tier.includes.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" />
@@ -90,7 +90,7 @@ export function Pricing() {
             </Frame>
           ))}
         </div>
-        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-zinc-500">
           Combined engagements (setup plus the first quarter of ownership) are
           the usual starting point. SDET pods are scoped separately against
           the same platform — we will not staff a pod onto a framework we

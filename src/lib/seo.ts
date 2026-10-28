@@ -8,7 +8,7 @@ export function getMetadataBase(): URL {
 }
 
 export const ogCopy = {
-  title: "Aslan Consulting LLC — Test Architecture & SDET Pods",
+  title: "Testing Explained - Software testing, explained simply",
   description:
-    "Centralize the test platform. Distribute the engineers. Enterprise Playwright architecture, flake SLOs, and CI/CD optimization.",
+    "Testing Explained helps engineering teams own their Playwright test architecture, kill flaky tests, and ship faster. One testing lesson every day on Instagram.",
 } as const;

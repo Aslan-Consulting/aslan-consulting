@@ -3,12 +3,12 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #fafafa;
-  --bg-elevated: rgb(255 255 255 / 0.72);
-  --fg: #09090b;
-  --fg-muted: #71717a;
+  --bg: #f7f6f2;
+  --bg-elevated: rgb(255 255 255 / 0.86);
+  --fg: #18181b;
+  --fg-muted: #52525b;
   --line: rgb(24 24 27 / 0.12);
-  --ring: #0891b2;
+  --ring: #22c55e;
   color-scheme: light;
 }
 
@@ -48,18 +48,12 @@ body {
 }
 
 ::selection {
-  background: rgb(6 182 212 / 0.28);
+  background: rgb(34 197 94 / 0.28);
   color: var(--fg);
 }
 
 .hero-glow {
-  background: radial-gradient(ellipse 70% 50% at 50% -8%, rgb(6 182 212 / 0.08), transparent 58%);
-}
-
-.dark .hero-glow {
-  background:
-    radial-gradient(ellipse 70% 55% at 50% -10%, rgb(6 182 212 / 0.14), transparent 58%),
-    radial-gradient(ellipse 50% 35% at 85% 0%, rgb(24 24 27 / 0.8), transparent 55%);
+  background: radial-gradient(ellipse 70% 50% at 50% -8%, rgb(34 197 94 / 0.14), transparent 58%);
 }
 
 .skip-link {
@@ -137,16 +131,12 @@ button {
 }
 
 .legal-copy a {
-  color: #0891b2;
+  color: #15803d;
   text-underline-offset: 3px;
 }
 
 .legal-copy a:hover {
   text-decoration: underline;
-}
-
-.dark .legal-copy a {
-  color: #22d3ee;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,6 @@
-# Aslan Consulting LLC
+# Testing Explained
 
-Marketing site for Aslan Consulting LLC — a boutique QA and SDET firm focused on centralized test framework architecture and distributed engineering pods.
+Marketing site for Testing Explained — a boutique QA and SDET brand (Aslan Consulting LLC) focused on centralized test framework architecture and distributed engineering pods.
 
 Built with Next.js (App Router), TypeScript, and Tailwind CSS.
 

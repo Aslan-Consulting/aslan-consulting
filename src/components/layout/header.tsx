@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/ui/brand-logo";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { nav } from "@/lib/site";
 
 export function Header() {
@@ -20,12 +19,12 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-zinc-200/50 bg-zinc-50/55 backdrop-blur-xl dark:border-zinc-800/40 dark:bg-zinc-950/50">
+    <header className="sticky top-0 z-40 border-b border-zinc-200/70 bg-[#f7f6f2]/85 backdrop-blur-xl">
       <Container className="flex h-[4.5rem] items-center justify-between gap-6">
         <a
           href="/"
-          className="flex h-full shrink-0 items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-zinc-950"
-          aria-label="Aslan Consulting"
+          className="flex h-full shrink-0 items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f7f6f2]"
+          aria-label="Testing Explained"
         >
           <BrandLogo priority />
         </a>
@@ -35,7 +34,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:hover:text-zinc-50"
+              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
             >
               {item.label}
             </a>
@@ -43,13 +42,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <ThemeToggle />
           <div className="hidden md:block">
-            <ButtonLink href="/#discovery">Book a Strategy Call</ButtonLink>
+            <ButtonLink href="/#discovery">Book a call</ButtonLink>
           </div>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 text-zinc-900 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:border-zinc-800 dark:text-zinc-50"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200 text-zinc-900 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -65,23 +63,20 @@ export function Header() {
       </Container>
 
       {open ? (
-        <div
-          id="mobile-nav"
-          className="border-t border-zinc-200/70 bg-zinc-50/90 backdrop-blur-xl md:hidden dark:border-zinc-800/70 dark:bg-zinc-950/90"
-        >
+        <div id="mobile-nav" className="border-t border-zinc-200/70 bg-[#f7f6f2]/95 backdrop-blur-xl md:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-2 py-2 text-base text-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:text-zinc-50"
+                className="rounded-xl px-2 py-2 text-base text-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
               >
                 {item.label}
               </a>
             ))}
             <ButtonLink href="/#discovery" className="mt-2" onClick={() => setOpen(false)}>
-              Book a Strategy Call
+              Book a call
             </ButtonLink>
           </Container>
         </div>

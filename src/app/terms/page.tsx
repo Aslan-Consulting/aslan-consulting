@@ -3,14 +3,14 @@ import { LegalArticle } from "@/components/legal/legal-article";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Terms of Service — ${site.legalName}`,
-  description:
-    "Terms of use for the Aslan Consulting, LLC website and B2B consulting inquiries.",
+  title: `Terms of Service — ${site.name}`,
+  description: "Terms of use for the Testing Explained website and B2B consulting inquiries.",
 };
 
 export default function TermsPage() {
   return (
-    <LegalArticle title={`Terms of Service for ${site.legalName}`}>
+    <LegalArticle title={`Terms of Service for ${site.name}`}>
+      <p>{site.legalLine}</p>
       <p>
         By using this website, you agree to these terms. If you do not agree, please
         do not use the site.
@@ -26,7 +26,7 @@ export default function TermsPage() {
       <h2>Client services</h2>
       <p>
         Client services are governed by individual master service agreements (MSAs)
-        executed with clients. Nothing on this website replaces or amends those
+        executed with {site.legalName}. Nothing on this website replaces or amends those
         agreements.
       </p>
 

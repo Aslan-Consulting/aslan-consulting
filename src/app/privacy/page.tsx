@@ -3,16 +3,17 @@ import { LegalArticle } from "@/components/legal/legal-article";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Privacy Policy — ${site.legalName}`,
+  title: `Privacy Policy — ${site.name}`,
   description:
-    "How Aslan Consulting, LLC collects and uses information for scheduling consultations and B2B software testing communications.",
+    "How Testing Explained collects and uses information for scheduling consultations and B2B software testing communications.",
 };
 
 export default function PrivacyPage() {
   return (
-    <LegalArticle title={`Privacy Policy for ${site.legalName}`}>
+    <LegalArticle title={`Privacy Policy for ${site.name}`}>
+      <p>{site.legalLine}</p>
       <p>
-        This policy describes how {site.legalName} collects and uses information when you
+        This policy describes how {site.name} collects and uses information when you
         inquire about B2B software testing services through this website.
       </p>
 

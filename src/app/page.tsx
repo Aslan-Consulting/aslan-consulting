@@ -4,6 +4,7 @@ import { Discovery } from "@/components/sections/discovery";
 import { Hero } from "@/components/sections/hero";
 import { Pricing } from "@/components/sections/pricing";
 import { Services } from "@/components/sections/services";
+import { Waitlist } from "@/components/sections/waitlist";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <About />
       <Approach />
       <Pricing />
+      <Waitlist />
       <Discovery />
     </main>
   );

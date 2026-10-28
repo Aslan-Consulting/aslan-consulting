@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 export function Discovery() {
   return (
-    <section id="discovery" className="scroll-mt-24 py-20 sm:py-24">
+    <section id="discovery" className="scroll-mt-24 bg-[#f7f6f2] py-20 sm:py-24">
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
         <SectionHeading
           kicker="Discovery"

@@ -3,7 +3,6 @@ import { Geist } from "next/font/google";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
-import { ThemeProvider } from "@/components/theme/theme-provider";
 import { getMetadataBase, ogCopy } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
     "QA consulting",
     "CI/CD",
     "test flakiness",
-    "Aslan Consulting",
+    "Testing Explained",
   ],
   authors: [{ name: site.name }],
   openGraph: {
@@ -59,27 +58,16 @@ export const metadata: Metadata = {
   },
 };
 
-const themeInit = `(function(){try{var k='aslan-theme';var t=localStorage.getItem(k)||'dark';var d=t==='dark'||(t==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){document.documentElement.classList.add('dark');}})();`;
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${geistSans.variable} dark h-full antialiased`}
-    >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-      </head>
-      <body className="flex min-h-full flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
-        <ThemeProvider>
-          <a href="#main" className="skip-link">
-            Skip to content
-          </a>
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
+    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col bg-[#f7f6f2] text-zinc-900">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );

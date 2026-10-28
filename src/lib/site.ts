@@ -1,23 +1,27 @@
 export const site = {
-  name: "Aslan Consulting LLC",
-  legalName: "Aslan Consulting, LLC",
-  shortName: "Aslan",
-  tagline: "Centralized test architecture. Distributed engineering pods.",
+  name: "Testing Explained",
+  legalName: "Aslan Consulting LLC",
+  legalLine: "Testing Explained is a brand of Aslan Consulting LLC",
+  shortName: "Testing Explained",
+  tagline: "Software testing, explained simply.",
   description:
     "Boutique QA and SDET firm for engineering directors. We design centralized Playwright architectures and staff distributed pods so product orgs ship with a flake SLO, not a hope.",
   email: "majdaslan4@gmail.com",
+  instagram: "https://www.instagram.com/testingexplained",
 } as const;
 
 export const nav = [
   { href: "/#services", label: "Services" },
-  { href: "/#about", label: "About" },
+  { href: "/#how-it-works", label: "How it works" },
   { href: "/#pricing", label: "Pricing" },
+  { href: "/#discovery", label: "Book a call" },
 ] as const;
 
 export const footerQuickLinks = [
   { href: "/#services", label: "Services" },
-  { href: "/#about", label: "About" },
-  { href: "/#discovery", label: "Contact" },
+  { href: "/#how-it-works", label: "How it works" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/#discovery", label: "Book a call" },
 ] as const;
 
 export const legalLinks = [

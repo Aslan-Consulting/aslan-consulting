@@ -67,7 +67,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-24 border-b border-zinc-200/80 py-20 sm:py-24 dark:border-zinc-800/80">
+    <section id="services" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
       <Container>
         <SectionHeading
           kicker="Services"
@@ -77,16 +77,16 @@ export function Services() {
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
           {services.map((service) => (
             <Frame key={service.index} className="flex flex-col p-6 sm:p-8">
-              <p className="inline-flex w-fit rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-cyan-700 dark:text-cyan-400">
+              <p className="inline-flex w-fit rounded-full border border-green-500/20 bg-green-500/10 px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-green-800">
                 {service.tag}
               </p>
-              <h3 className="mt-4 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+              <h3 className="mt-4 text-xl font-semibold tracking-tight text-zinc-900">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-500 sm:text-base dark:text-zinc-400">
+              <p className="mt-2 text-sm leading-relaxed text-zinc-500 sm:text-base">
                 {service.lead}
               </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-zinc-700">
                 {service.outcomes.map((outcome) => (
                   <li key={outcome} className="flex gap-3">
                     <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" />
