@@ -21,7 +21,9 @@ export default function PrivacyPage() {
       <p>
         We collect information you provide when requesting a consultation — typically
         your name, email address, and phone number, along with company and engagement
-        details you choose to share on the discovery form.
+        details you choose to share on the discovery form. If you join the consulting
+        waitlist, we collect that email address so we can write when a consulting
+        window opens.
       </p>
 
       <h2>How we use it</h2>
