@@ -70,7 +70,7 @@ export function Waitlist() {
           <SectionHeading
             kicker="Consulting"
             title="Join the consulting waitlist"
-            description="Capacity for new framework engagements is limited. Leave a work email and we will write when a window opens. No course and no newsletter."
+            description="Capacity for new framework engagements is limited. Leave a work email and we will write when a window opens."
           />
           <Frame className="p-6 sm:p-8">
             {status === "success" ? (
