@@ -34,6 +34,9 @@ Copy `.env.example` to `.env.local` and adjust:
 | `NEXT_PUBLIC_SITE_URL` | Canonical site origin for Open Graph URLs. Falls back to `http://localhost:3000`. |
 | `NEXT_PUBLIC_CAL_BOOKING_URL` | Cal.com or Calendly event URL. After a successful discovery submit, the browser is sent here with `name` and `email` query params. |
 | `NEXT_PUBLIC_CALENDLY_URL` / `CALENDLY_URL` | Optional aliases. The first non-empty value wins. |
+| `RESEND_API_KEY` | Resend API key. Required with the two addresses below to send mail. |
+| `DISCOVERY_NOTIFY_EMAIL` | Inbox for discovery fallback and consulting waitlist signups. Use `majdaslan4@gmail.com`. |
+| `DISCOVERY_FROM_EMAIL` | Verified Resend from address, e.g. `Aslan Consulting <noreply@aslan.consulting>`. |
 
 Example redirect:
 
@@ -65,6 +68,28 @@ Error (`400`):
 
 `data/leads.jsonl` is gitignored. File-write failures (typical on Vercel) are logged and do not fail the request. If `RESEND_API_KEY`, `DISCOVERY_NOTIFY_EMAIL`, and `DISCOVERY_FROM_EMAIL` are set, the handler emails the lead instead. Otherwise the submit still returns `{ ok: true }` and the lead is in server logs.
 
+## Waitlist API
+
+`POST /api/waitlist`
+
+Homepage consulting waitlist. Validates a single email (same pattern as discovery) and emails it to `DISCOVERY_NOTIFY_EMAIL` through Resend. There is no course list and no mail to the subscriber.
+
+Success:
+
+```json
+{ "ok": true }
+```
+
+The same `{ ok: true }` is returned when the honeypot field `website` is filled, and no email is sent.
+
+Error (`400` validation, `502` when Resend is unset or the send fails):
+
+```json
+{ "ok": false, "message": "Enter a valid email." }
+```
+
+The form stays on the error and does not show the confirmation until the notify call succeeds.
+
 ## Open Graph
 
 `/og-image.png` is a 1200×630 image (dark zinc canvas, cyan metrics — no emerald). Served by `src/app/og-image.png/route.tsx` (`next/og` ImageResponse) and copied to `public/og-image.png` for crawlers. Metadata in `src/app/layout.tsx` points at that URL via `metadataBase`.
@@ -72,7 +97,7 @@ Error (`400`):
 ## Project layout
 
 ```
-src/app/                 layout, homepage, icon, OG image, API route
+src/app/                 layout, homepage, icon, OG image, discovery and waitlist API routes
 src/components/layout/   header, footer
 src/components/sections/ hero, services, approach, pricing, discovery
 src/components/theme/    provider + toggle

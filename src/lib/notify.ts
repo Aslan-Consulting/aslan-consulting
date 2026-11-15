@@ -9,24 +9,18 @@ function readEmailConfig(): { apiKey: string; to: string; from: string } | undef
   return { apiKey, to, from };
 }
 
-export async function notifyLeadByEmail(payload: DiscoveryPayload): Promise<boolean> {
+type OutboundEmail = {
+  subject: string;
+  text: string;
+  replyTo?: string;
+};
+
+async function sendWithResend(message: OutboundEmail, logLabel: string): Promise<boolean> {
   const config = readEmailConfig();
   if (!config) {
-    console.info("[discovery] email notify skipped (not configured)");
+    console.info(`[${logLabel}] email notify skipped (not configured)`);
     return false;
   }
-
-  const body = [
-    `Name: ${payload.name}`,
-    `Email: ${payload.email}`,
-    `Company: ${payload.company}`,
-    `Role: ${payload.role}`,
-    `Org size: ${payload.teamSize}`,
-    `Stack: ${payload.stack.join(", ")}`,
-    `Window: ${payload.preferredTime}`,
-    "",
-    payload.challenge,
-  ].join("\n");
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
@@ -38,19 +32,55 @@ export async function notifyLeadByEmail(payload: DiscoveryPayload): Promise<bool
       body: JSON.stringify({
         from: config.from,
         to: [config.to],
-        subject: `Discovery lead — ${payload.company}`,
-        text: body,
+        subject: message.subject,
+        text: message.text,
+        ...(message.replyTo ? { reply_to: message.replyTo } : {}),
       }),
     });
 
     if (!response.ok) {
-      console.error("[discovery] email notify failed", await response.text());
+      console.error(`[${logLabel}] email notify failed`, response.status, await response.text());
       return false;
     }
 
+    const sent = (await response.json()) as { id?: string };
+    console.info(`[${logLabel}] email sent`, sent.id ?? "accepted");
     return true;
   } catch (error) {
-    console.error("[discovery] email notify failed", error);
+    console.error(`[${logLabel}] email notify failed`, error);
     return false;
   }
+}
+
+export async function notifyLeadByEmail(payload: DiscoveryPayload): Promise<boolean> {
+  const text = [
+    `Name: ${payload.name}`,
+    `Email: ${payload.email}`,
+    `Company: ${payload.company}`,
+    `Role: ${payload.role}`,
+    `Org size: ${payload.teamSize}`,
+    `Stack: ${payload.stack.join(", ")}`,
+    `Window: ${payload.preferredTime}`,
+    "",
+    payload.challenge,
+  ].join("\n");
+
+  return sendWithResend(
+    {
+      subject: `Discovery lead — ${payload.company}`,
+      text,
+    },
+    "discovery",
+  );
+}
+
+export async function notifyWaitlistByEmail(email: string): Promise<boolean> {
+  return sendWithResend(
+    {
+      subject: `Consulting waitlist — ${email}`,
+      replyTo: email,
+      text: ["New consulting waitlist signup.", "", `Email: ${email}`].join("\n"),
+    },
+    "waitlist",
+  );
 }

@@ -86,3 +86,20 @@ export function validateDiscovery(
     },
   };
 }
+
+export function validateWaitlist(
+  input: unknown,
+): { ok: true; email: string; website: string } | { ok: false; message: string } {
+  if (typeof input !== "object" || input === null) {
+    return { ok: false, message: "Enter a valid email." };
+  }
+
+  const data = input as Record<string, unknown>;
+  const email = asString(data.email).toLowerCase();
+  const website = asString(data.website);
+
+  if (!email) return { ok: false, message: "Enter your email." };
+  if (!EMAIL_RE.test(email)) return { ok: false, message: "Enter a valid email." };
+
+  return { ok: true, email, website };
+}
