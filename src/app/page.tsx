@@ -6,6 +6,7 @@ import { Faq } from "@/components/sections/faq";
 import { FlakeCalculator } from "@/components/sections/flake-calculator";
 import { Hero } from "@/components/sections/hero";
 import { Pricing } from "@/components/sections/pricing";
+import { PromptBook } from "@/components/sections/prompt-book";
 import { Services } from "@/components/sections/services";
 import { Waitlist } from "@/components/sections/waitlist";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Faq />
       <Waitlist />
       <Discovery />
+      <PromptBook />
     </main>
   );
 }
