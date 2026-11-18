@@ -1,5 +1,6 @@
 import { About } from "@/components/sections/about";
 import { Approach } from "@/components/sections/approach";
+import { BuiltOn } from "@/components/sections/built-on";
 import { CaseVisual } from "@/components/sections/case-visual";
 import { Discovery } from "@/components/sections/discovery";
 import { Faq } from "@/components/sections/faq";
@@ -25,6 +26,8 @@ export default function Home() {
       <FlakeCalculator />
       <SectionDivider />
       <Approach />
+      <SectionDivider />
+      <BuiltOn />
       <SectionDivider />
       <Pricing />
       <SectionDivider />

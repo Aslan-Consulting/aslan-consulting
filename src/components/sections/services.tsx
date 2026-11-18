@@ -76,28 +76,36 @@ export function Services() {
           title="Architecture first. Capacity second."
           description="Most QA spend goes into more tests on an unstable base. We invert that: a centralized framework, then pods that ship against it."
         />
-        <div className="mt-6 grid gap-3 lg:grid-cols-2">
-          {services.map((service) => (
-            <Frame key={service.index} className="flex flex-col p-5">
-              <p className="inline-flex w-fit rounded-full bg-pine px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-cream">
-                {service.tag}
-              </p>
-              <h3 className="mt-3 text-xl font-semibold tracking-tight text-pine">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-pine sm:text-base">
-                {service.lead}
-              </p>
-              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-pine">
-                {service.outcomes.map((outcome) => (
-                  <li key={outcome} className="flex gap-3">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
-                    <span>{outcome}</span>
-                  </li>
-                ))}
-              </ul>
-            </Frame>
-          ))}
+        <div className="mt-6 grid grid-cols-1 gap-3 lg:grid-cols-6">
+          {services.map((service, index) => {
+            const featured = index < 2;
+            return (
+              <Frame
+                key={service.index}
+                className={`flex flex-col p-5 ${featured ? "lg:col-span-3" : "lg:col-span-2"}`}
+              >
+                <p className="inline-flex w-fit rounded-full bg-pine px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-cream">
+                  {service.tag}
+                </p>
+                <h3
+                  className={`mt-3 font-semibold tracking-tight text-pine ${
+                    featured ? "text-2xl" : "text-lg"
+                  }`}
+                >
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-pine sm:text-base">{service.lead}</p>
+                <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-pine">
+                  {service.outcomes.map((outcome) => (
+                    <li key={outcome} className="flex gap-3">
+                      <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
+                      <span>{outcome}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Frame>
+            );
+          })}
         </div>
         </Reveal>
       </Container>
