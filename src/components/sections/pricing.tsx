@@ -1,6 +1,5 @@
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { Frame } from "@/components/ui/frame";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -51,32 +50,40 @@ export function Pricing() {
         />
         <div className="mt-6 grid gap-3 lg:grid-cols-2">
           {tiers.map((tier) => (
-            <Frame
+            <article
               key={tier.name}
-              className={`flex flex-col p-5 ${tier.featured ? "border-gold" : ""}`}
+              className={`flex flex-col rounded-xl p-5 shadow-[0_8px_24px_rgb(8_48_32/0.08)] ${
+                tier.featured
+                  ? "border border-gold bg-pine text-cream"
+                  : "border border-pine/25 bg-cream text-pine"
+              }`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-semibold tracking-tight text-pine">
+                  <h3 className="text-xl font-semibold tracking-tight">
                     {tier.name}
                   </h3>
-                  <p className="mt-1 text-xs font-semibold tracking-[0.12em] text-pine uppercase">
+                  <p
+                    className={`mt-1 text-xs font-semibold tracking-[0.12em] uppercase ${
+                      tier.featured ? "text-gold" : "text-pine"
+                    }`}
+                  >
                     {tier.featured ? "Ongoing" : "Engagement"}
                   </p>
                 </div>
                 {tier.featured ? (
-                  <span className="rounded-full bg-pine px-2.5 py-1 text-[0.7rem] font-medium tracking-wide text-cream">
+                  <span className="rounded-full bg-cream px-2.5 py-1 text-[0.7rem] font-medium tracking-wide text-pine">
                     Most orgs keep this
                   </span>
                 ) : null}
               </div>
-              <p className="mt-4 text-3xl font-semibold tracking-tight text-pine sm:text-4xl">
+              <p className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
                 {tier.price}
-                {tier.featured ? <span className="text-lg font-medium text-pine">/mo</span> : null}
+                {tier.featured ? <span className="text-lg font-medium">/mo</span> : null}
               </p>
-              <p className="mt-1 text-sm text-pine">{tier.cadence}</p>
-              <p className="mt-4 text-sm leading-relaxed text-pine">{tier.summary}</p>
-              <ul className="mt-4 flex-1 space-y-2 text-sm text-pine">
+              <p className="mt-1 text-sm">{tier.cadence}</p>
+              <p className="mt-4 text-sm leading-relaxed">{tier.summary}</p>
+              <ul className="mt-4 flex-1 space-y-2 text-sm">
                 {tier.includes.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
@@ -84,8 +91,8 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-xs leading-relaxed text-pine">{tier.note}</p>
-            </Frame>
+              <p className="mt-4 text-xs leading-relaxed">{tier.note}</p>
+            </article>
           ))}
         </div>
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-pine">
