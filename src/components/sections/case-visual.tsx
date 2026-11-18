@@ -17,11 +17,11 @@ const line = points.map(([x, y]) => `${x},${y}`).join(" ");
 
 export function CaseVisual() {
   return (
-    <section id="example" className="scroll-mt-24 bg-cream py-8 sm:py-10">
+    <section id="example" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
         <Reveal className="mx-auto max-w-3xl">
           {/* TODO: Replace with real anonymized case data when provided. */}
-          <Frame className="p-5 sm:p-6">
+          <Frame className="px-5 py-3 md:p-6">
             <p className="text-xs font-semibold tracking-[0.14em] text-pine uppercase">
               Example illustration, not a client result.
             </p>
@@ -32,7 +32,7 @@ export function CaseVisual() {
               viewBox="0 0 420 140"
               role="img"
               aria-label="Example illustration of a downward flake trend. Not a client result."
-              className="mt-6 h-auto w-full"
+              className="mt-4 h-auto w-full md:mt-6"
             >
               <line x1="16" y1="16" x2="16" y2="112" stroke="#083020" strokeOpacity="0.35" strokeWidth="1" />
               <line x1="16" y1="112" x2="404" y2="112" stroke="#083020" strokeOpacity="0.35" strokeWidth="1" />

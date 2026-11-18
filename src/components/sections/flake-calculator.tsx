@@ -42,7 +42,7 @@ export function FlakeCalculator() {
   const shown = Number.isFinite(hours) ? hours.toLocaleString(undefined, { maximumFractionDigits: 1 }) : "0";
 
   return (
-    <section id="flake-cost" className="scroll-mt-24 bg-cream py-8 sm:py-10">
+    <section id="flake-cost" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
         <Reveal>
           <SectionHeading
@@ -50,8 +50,8 @@ export function FlakeCalculator() {
             title="What is flakiness costing you?"
             description="tests × (flake rate ÷ 100) × minutes lost × runs per month ÷ 60 = wasted hours per month."
           />
-          <Frame className="mt-6 p-5">
-            <div className="grid gap-4 sm:grid-cols-2">
+          <Frame className="mt-4 px-5 py-3 md:mt-6 md:p-5">
+            <div className="grid gap-3 sm:grid-cols-2 md:gap-4">
               {fields.map((field) => (
                 <label key={field.key} className="block text-sm font-medium text-pine">
                   {field.label}
@@ -70,10 +70,10 @@ export function FlakeCalculator() {
                 </label>
               ))}
             </div>
-            <p className="mt-5 font-mono text-sm leading-relaxed text-pine">
+            <p className="mt-3 font-mono text-sm leading-relaxed text-pine md:mt-5">
               {numbers.tests} × ({numbers.flakeRate} ÷ 100) × {numbers.minutes} × {numbers.runs} ÷ 60 = {shown} hours
             </p>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-pine tabular-nums">
+            <p className="mt-2 text-3xl font-semibold tracking-tight text-pine tabular-nums md:mt-3">
               {shown} <span className="text-lg font-medium text-pine">hours / month</span>
             </p>
             <p className="mt-2 text-sm text-pine">Estimate only, based on the numbers you enter.</p>

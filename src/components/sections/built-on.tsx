@@ -27,17 +27,17 @@ const tools = ["Playwright", "GitHub Actions", "GitLab", "Jenkins"] as const;
 
 export function BuiltOn() {
   return (
-    <section className="bg-pine py-8 text-cream sm:py-10">
+    <section className="bg-pine py-3 text-cream md:py-10">
       <Container>
-        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(16rem,0.75fr)]">
-          <pre className="overflow-x-auto rounded-xl border border-gold/40 p-4 text-sm leading-relaxed text-cream">
+        <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(16rem,0.75fr)] lg:gap-6">
+          <pre className="overflow-x-auto rounded-xl border border-gold/40 px-4 py-3 text-sm leading-relaxed text-cream md:p-4">
             <code>{snippet}</code>
           </pre>
-          <figure className="rounded-xl border border-gold/40 p-4 sm:p-5">
+          <figure className="rounded-xl border border-gold/40 px-4 py-3 md:p-5">
             <figcaption className="text-xs font-medium leading-relaxed text-cream">
               Example illustration, not a client result.
             </figcaption>
-            <ul className="mt-4 space-y-3 border-t border-gold/40 pt-4">
+            <ul className="mt-3 space-y-2 border-t border-gold/40 pt-3 md:mt-4 md:space-y-3 md:pt-4">
               {results.map((result) => (
                 <li key={result.name} className="flex items-baseline justify-between gap-4">
                   <span className="text-sm leading-snug text-cream">{result.name}</span>
@@ -51,12 +51,12 @@ export function BuiltOn() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 border-t border-gold/40 pt-3 text-sm leading-relaxed text-cream">
+            <p className="mt-3 border-t border-gold/40 pt-3 text-sm leading-relaxed text-cream md:mt-4">
               Auth passed. The smoke gate passed. A deep check failed.
             </p>
           </figure>
         </div>
-        <div className="mt-6 border-t border-gold/40 pt-5">
+        <div className="mt-4 border-t border-gold/40 pt-3 md:mt-6 md:pt-5">
           <p className="text-sm font-semibold text-gold">Built on</p>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
             {tools.map((tool) => (

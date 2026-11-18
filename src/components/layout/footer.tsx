@@ -5,12 +5,12 @@ import { footerQuickLinks, legalLinks, site } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-gold bg-pine text-cream">
-      <Container className="grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-3">
+      <Container className="grid gap-5 py-6 sm:grid-cols-2 md:gap-8 md:py-10 lg:grid-cols-3">
         <div className="max-w-sm">
           <BrandLogo markClassName="h-12 w-12" />
-          <p className="mt-4 text-sm leading-relaxed text-cream">{site.legalLine}</p>
-          <p className="mt-3 text-xs text-cream">© 2026 {site.legalLine}. All rights reserved.</p>
-          <div className="mt-5 flex items-center gap-3">
+          <p className="mt-3 text-sm leading-relaxed text-cream md:mt-4">{site.legalLine}</p>
+          <p className="mt-2 text-xs text-cream md:mt-3">© 2026 {site.legalLine}. All rights reserved.</p>
+          <div className="mt-4 flex items-center gap-3 md:mt-5">
             <a
               href={site.instagram}
               target="_blank"

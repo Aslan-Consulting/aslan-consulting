@@ -181,8 +181,8 @@ export function DiscoveryForm() {
     "mt-1.5 w-full rounded-xl border border-pine/30 bg-card px-3 py-2.5 text-sm text-pine placeholder:text-pine/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine";
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative grid gap-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={onSubmit} noValidate className="relative grid gap-3 md:gap-5">
+      <div className="grid gap-3 sm:grid-cols-2 md:gap-5">
         <div>
           <label htmlFor={ids.name} className="text-sm font-medium text-pine">
             Name
@@ -221,7 +221,7 @@ export function DiscoveryForm() {
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-3 sm:grid-cols-2 md:gap-5">
         <div>
           <label htmlFor={ids.company} className="text-sm font-medium text-pine">
             Company

@@ -5,7 +5,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-24 bg-cream py-8 sm:py-10"
+      className="scroll-mt-24 bg-cream py-3 md:py-10"
     >
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
@@ -13,7 +13,7 @@ export function About() {
             <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
             About
           </p>
-          <p className="mt-3 text-2xl font-semibold tracking-tight text-pine sm:text-3xl">
+          <p className="mt-2 text-2xl font-semibold tracking-tight text-pine sm:text-3xl md:mt-3">
             Led by a lead SDET with 10 years in test automation, focused on Playwright.
           </p>
         </Reveal>

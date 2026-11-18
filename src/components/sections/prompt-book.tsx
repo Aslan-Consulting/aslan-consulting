@@ -7,10 +7,10 @@ const PAPERBACK_URL = "https://www.amazon.com/dp/B0HRSRB17J";
 
 export function PromptBook() {
   return (
-    <section id="prompt-book" className="scroll-mt-24 bg-cream py-8 sm:py-10">
+    <section id="prompt-book" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
         <Reveal>
-          <div className="relative mx-auto max-w-2xl overflow-hidden rounded-xl border border-gold bg-pine px-5 py-8 text-center text-cream shadow-[0_8px_24px_rgb(8_48_32/0.08)] sm:px-8 sm:py-10">
+          <div className="relative mx-auto max-w-2xl overflow-hidden rounded-xl border border-gold bg-pine px-5 py-5 text-center text-cream shadow-[0_8px_24px_rgb(8_48_32/0.08)] md:px-8 md:py-10">
             <div aria-hidden className="book-dots pointer-events-none absolute inset-0" />
             <div className="relative">
               <p className="flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.14em] text-gold uppercase">
@@ -24,7 +24,7 @@ export function PromptBook() {
                 Stop trusting the first AI answer. 100 prompts that actually test software — each with a
                 real example and the checks to run on what the AI gives you back. By Testing Explained.
               </p>
-              <div className="mt-6 flex flex-col items-center gap-3">
+              <div className="mt-4 flex flex-col items-center gap-3 md:mt-6">
                 <ButtonLink
                   href={KINDLE_URL}
                   target="_blank"

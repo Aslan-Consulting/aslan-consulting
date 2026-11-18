@@ -25,9 +25,9 @@ const steps = [
 
 function ProcessDiagram({ active }: { active: number }) {
   return (
-    <div className="rounded-xl border border-pine/25 bg-card p-5 shadow-[0_8px_24px_rgb(8_48_32/0.08)]" aria-hidden>
+    <div className="rounded-xl border border-pine/25 bg-card px-5 py-3 shadow-[0_8px_24px_rgb(8_48_32/0.08)] md:p-5" aria-hidden>
       <p className="text-xs font-semibold tracking-[0.14em] text-pine uppercase">Platform path</p>
-      <ol className="mt-6 space-y-4">
+      <ol className="mt-4 space-y-2 md:mt-6 md:space-y-4">
         {steps.map((step, index) => {
           const built = index <= active;
           const current = index === active;
@@ -59,7 +59,7 @@ export function Approach() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="how-it-works" className="scroll-mt-24 bg-cream py-8 sm:py-10">
+    <section id="how-it-works" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
         <Reveal>
           <SectionHeading
@@ -67,9 +67,9 @@ export function Approach() {
             title="How a director should buy quality work."
             description="Short discovery. Written architecture. Then either a standing platform, embedded pods, or both. No retainers that exist to 'stay in the mix.'"
           />
-          <div className="mt-6 rounded-2xl border border-pine/20 bg-card p-3 sm:p-4">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-stretch">
-              <ol className="relative grid flex-1 gap-4 lg:grid-cols-3 lg:gap-6">
+          <div className="mt-4 rounded-2xl border border-pine/20 bg-card px-3 py-2 md:mt-6 md:p-4">
+            <div className="flex flex-col gap-2 lg:flex-row lg:items-stretch lg:gap-4">
+              <ol className="relative grid flex-1 gap-2 lg:grid-cols-3 lg:gap-6">
                 <span aria-hidden className="absolute top-5 bottom-5 left-[1.125rem] w-px bg-gold lg:hidden" />
                 {steps.map((step, index) => (
                   <li
@@ -77,7 +77,7 @@ export function Approach() {
                     tabIndex={0}
                     onMouseEnter={() => setActive(index)}
                     onFocus={() => setActive(index)}
-                    className="relative rounded-xl border border-pine/25 bg-card p-4 shadow-[0_8px_24px_rgb(8_48_32/0.08)] outline-none focus-visible:ring-2 focus-visible:ring-pine"
+                    className="relative rounded-xl border border-pine/25 bg-card px-4 py-3 shadow-[0_8px_24px_rgb(8_48_32/0.08)] outline-none focus-visible:ring-2 focus-visible:ring-pine md:p-4"
                   >
                     {index < steps.length - 1 ? (
                       <span aria-hidden className="absolute top-[1.35rem] -right-6 z-20 hidden w-6 items-center lg:flex">
@@ -92,7 +92,7 @@ export function Approach() {
                     >
                       {step.index}
                     </span>
-                    <h3 className="mt-3 text-lg font-semibold tracking-tight text-pine">{step.title}</h3>
+                    <h3 className="mt-2 text-lg font-semibold tracking-tight text-pine md:mt-3">{step.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-pine">{step.body}</p>
                   </li>
                 ))}

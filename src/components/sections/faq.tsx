@@ -33,11 +33,11 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-24 bg-cream py-8 sm:py-10">
+    <section id="faq" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
         <Reveal>
           <SectionHeading kicker="FAQ" title="Questions directors ask before the call." />
-          <div className="mt-6 divide-y divide-pine/20 rounded-xl border border-pine/25 bg-card shadow-[0_8px_24px_rgb(8_48_32/0.08)]">
+          <div className="mt-4 divide-y divide-pine/20 rounded-xl border border-pine/25 bg-card shadow-[0_8px_24px_rgb(8_48_32/0.08)] md:mt-6">
             {faqs.map((item) => (
               <details key={item.question} className="group px-5 py-3 sm:px-6">
                 <summary className="cursor-pointer list-none rounded-lg text-base font-medium text-pine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine focus-visible:ring-offset-2 focus-visible:ring-offset-card [&::-webkit-details-marker]:hidden">

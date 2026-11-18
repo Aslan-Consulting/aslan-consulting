@@ -64,15 +64,15 @@ export function Waitlist() {
   }
 
   return (
-    <section id="waitlist" className="scroll-mt-24 bg-cream py-8 sm:py-10">
+    <section id="waitlist" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
-        <Reveal className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+        <Reveal className="grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-6">
           <SectionHeading
             kicker="Consulting"
             title="Join the consulting waitlist"
             description="Capacity for new framework engagements is limited. Leave a work email and we will write when a window opens."
           />
-          <Frame className="p-6 sm:p-8">
+          <Frame className="px-6 py-4 md:p-8">
             {status === "success" ? (
               <p className="text-base font-medium text-pine" role="status">
                 You&apos;re on the list. We&apos;ll email you when a consulting window opens.

@@ -40,7 +40,7 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="scroll-mt-24 bg-cream py-8 sm:py-10">
+    <section id="pricing" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
         <Reveal>
         <SectionHeading
@@ -48,11 +48,11 @@ export function Pricing() {
           title="Setup retainers and monthly ownership. Stated as numbers."
           description="Directors should be able to take this to finance without a 'let's hop on a call to discuss packages' fog. Scope is still scoped — the bands are real."
         />
-        <div className="mt-6 grid gap-3 lg:grid-cols-2">
+        <div className="mt-4 grid gap-2 md:mt-6 md:gap-3 lg:grid-cols-2">
           {tiers.map((tier) => (
             <article
               key={tier.name}
-              className={`flex flex-col rounded-xl p-5 shadow-[0_8px_24px_rgb(8_48_32/0.08)] ${
+              className={`flex flex-col rounded-xl px-5 py-3 shadow-[0_8px_24px_rgb(8_48_32/0.08)] md:p-5 ${
                 tier.featured
                   ? "border border-gold bg-pine text-cream"
                   : "border border-pine/25 bg-card text-pine"
@@ -77,13 +77,13 @@ export function Pricing() {
                   </span>
                 ) : null}
               </div>
-              <p className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              <p className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl md:mt-4">
                 {tier.price}
                 {tier.featured ? <span className="text-lg font-medium">/mo</span> : null}
               </p>
               <p className="mt-1 text-sm">{tier.cadence}</p>
-              <p className="mt-4 text-sm leading-relaxed">{tier.summary}</p>
-              <ul className="mt-4 flex-1 space-y-2 text-sm">
+              <p className="mt-3 text-sm leading-relaxed md:mt-4">{tier.summary}</p>
+              <ul className="mt-3 flex-1 space-y-1.5 text-sm md:mt-4 md:space-y-2">
                 {tier.includes.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
@@ -91,17 +91,17 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-xs leading-relaxed">{tier.note}</p>
+              <p className="mt-3 text-xs leading-relaxed md:mt-4">{tier.note}</p>
             </article>
           ))}
         </div>
-        <p className="mt-6 max-w-3xl text-sm leading-relaxed text-pine">
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-pine md:mt-6">
           Combined engagements (setup plus the first quarter of ownership) are
           the usual starting point. SDET pods are scoped separately against
           the same platform — we will not staff a pod onto a framework we
           would not operate.
         </p>
-        <ButtonLink href="#discovery" className="mt-6">
+        <ButtonLink href="#discovery" className="mt-4 md:mt-6">
           Book a discovery call
         </ButtonLink>
         </Reveal>
