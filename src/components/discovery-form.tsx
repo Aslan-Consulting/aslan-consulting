@@ -299,7 +299,7 @@ export function DiscoveryForm() {
             return (
               <label
                 key={item}
-                className={`flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors ${
+                className={`flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-pine has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-cream ${
                   checked
                     ? "border-pine bg-pine/10 text-pine"
                     : "border-pine/30 text-pine"

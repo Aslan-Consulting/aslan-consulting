@@ -15,7 +15,6 @@ export const nav = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#prompt-book", label: "Book" },
-  { href: "/#discovery", label: "Book a call" },
 ] as const;
 
 export const footerQuickLinks = [

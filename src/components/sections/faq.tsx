@@ -40,7 +40,7 @@ export function Faq() {
           <div className="mt-6 divide-y divide-pine/20 rounded-xl border border-pine/25 bg-cream shadow-[0_8px_24px_rgb(8_48_32/0.08)]">
             {faqs.map((item) => (
               <details key={item.question} className="group px-5 py-3 sm:px-6">
-                <summary className="cursor-pointer list-none text-base font-medium text-pine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine [&::-webkit-details-marker]:hidden">
+                <summary className="cursor-pointer list-none rounded-lg text-base font-medium text-pine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine focus-visible:ring-offset-2 focus-visible:ring-offset-cream [&::-webkit-details-marker]:hidden">
                   <span className="flex items-center justify-between gap-4">
                     {item.question}
                     <span aria-hidden className="text-pine group-open:rotate-45">
