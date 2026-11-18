@@ -1,6 +1,5 @@
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { Frame } from "@/components/ui/frame";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -41,7 +40,7 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
+    <section id="pricing" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
         <Reveal>
         <SectionHeading
@@ -49,56 +48,60 @@ export function Pricing() {
           title="Setup retainers and monthly ownership. Stated as numbers."
           description="Directors should be able to take this to finance without a 'let's hop on a call to discuss packages' fog. Scope is still scoped — the bands are real."
         />
-        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+        <div className="mt-4 grid gap-2 md:mt-6 md:gap-3 lg:grid-cols-2">
           {tiers.map((tier) => (
-            <Frame
+            <article
               key={tier.name}
-              className={`flex flex-col p-6 sm:p-8 ${
+              className={`flex flex-col rounded-xl px-5 py-3 shadow-[0_8px_24px_rgb(8_48_32/0.08)] md:p-5 ${
                 tier.featured
-                  ? "ring-1 ring-green-500/25"
-                  : ""
+                  ? "border border-gold bg-pine text-cream"
+                  : "border border-pine/25 bg-card text-pine"
               }`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
+                  <h3 className="text-xl font-semibold tracking-tight">
                     {tier.name}
                   </h3>
-                  <p className="mt-1 text-xs font-medium tracking-[0.12em] text-green-700 uppercase">
+                  <p
+                    className={`mt-1 text-xs font-semibold tracking-[0.12em] uppercase ${
+                      tier.featured ? "text-gold" : "text-pine"
+                    }`}
+                  >
                     {tier.featured ? "Ongoing" : "Engagement"}
                   </p>
                 </div>
                 {tier.featured ? (
-                  <span className="rounded-full border border-zinc-200 bg-zinc-100 px-2.5 py-1 text-[0.65rem] font-medium tracking-wide text-zinc-600">
+                  <span className="rounded-full bg-cream px-2.5 py-1 text-[0.7rem] font-medium tracking-wide text-pine">
                     Most orgs keep this
                   </span>
                 ) : null}
               </div>
-              <p className="mt-6 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+              <p className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl md:mt-4">
                 {tier.price}
-                {tier.featured ? <span className="text-lg font-medium text-zinc-500">/mo</span> : null}
+                {tier.featured ? <span className="text-lg font-medium">/mo</span> : null}
               </p>
-              <p className="mt-1 text-sm text-zinc-500">{tier.cadence}</p>
-              <p className="mt-5 text-sm leading-relaxed text-zinc-500">{tier.summary}</p>
-              <ul className="mt-6 flex-1 space-y-2.5 text-sm text-zinc-700">
+              <p className="mt-1 text-sm">{tier.cadence}</p>
+              <p className="mt-3 text-sm leading-relaxed md:mt-4">{tier.summary}</p>
+              <ul className="mt-3 flex-1 space-y-1.5 text-sm md:mt-4 md:space-y-2">
                 {tier.includes.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" />
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-xs leading-relaxed text-zinc-500">{tier.note}</p>
-            </Frame>
+              <p className="mt-3 text-xs leading-relaxed md:mt-4">{tier.note}</p>
+            </article>
           ))}
         </div>
-        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-zinc-500">
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-pine md:mt-6">
           Combined engagements (setup plus the first quarter of ownership) are
           the usual starting point. SDET pods are scoped separately against
           the same platform — we will not staff a pod onto a framework we
           would not operate.
         </p>
-        <ButtonLink href="#discovery" className="mt-6">
+        <ButtonLink href="#discovery" className="mt-4 md:mt-6">
           Book a discovery call
         </ButtonLink>
         </Reveal>

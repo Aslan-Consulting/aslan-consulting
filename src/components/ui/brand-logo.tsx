@@ -26,7 +26,7 @@ export function BrandLogo({
         sizes="44px"
         className={`shrink-0 object-contain ${markClassName}`.trim()}
       />
-      <span className="text-[1.05rem] font-semibold tracking-tight text-zinc-900 sm:text-lg">
+      <span className="text-[1.05rem] font-semibold tracking-tight text-current sm:text-lg">
         Testing Explained
       </span>
     </span>

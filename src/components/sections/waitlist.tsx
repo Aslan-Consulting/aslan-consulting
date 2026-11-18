@@ -64,17 +64,17 @@ export function Waitlist() {
   }
 
   return (
-    <section id="waitlist" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
+    <section id="waitlist" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
-        <Reveal className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+        <Reveal className="grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-6">
           <SectionHeading
             kicker="Consulting"
             title="Join the consulting waitlist"
             description="Capacity for new framework engagements is limited. Leave a work email and we will write when a window opens."
           />
-          <Frame className="p-6 sm:p-8">
+          <Frame className="px-6 py-4 md:p-8">
             {status === "success" ? (
-              <p className="text-base font-medium text-zinc-900" role="status">
+              <p className="text-base font-medium text-pine" role="status">
                 You&apos;re on the list. We&apos;ll email you when a consulting window opens.
               </p>
             ) : (
@@ -93,12 +93,12 @@ export function Waitlist() {
                     onChange={(event) => setEmail(event.target.value)}
                     placeholder="Work email"
                     disabled={status === "submitting"}
-                    className="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 disabled:opacity-60"
+                    className="w-full rounded-xl border border-pine/30 bg-card px-3 py-2.5 text-sm text-pine placeholder:text-pine/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine disabled:opacity-60"
                     aria-invalid={Boolean(error)}
                     aria-describedby={error ? `${id}-error` : undefined}
                   />
                   {error ? (
-                    <p id={`${id}-error`} className="mt-1.5 text-sm text-red-600" role="alert">
+                    <p id={`${id}-error`} className="mt-1.5 text-sm text-red-700" role="alert">
                       {error}
                     </p>
                   ) : null}

@@ -25,7 +25,7 @@ const services = [
       "Sharding, artifact retention, and retry policy with a stated cause",
       "Selectors for smoke vs. deep suites so merge queues stay honest",
       "Failure taxonomy wired into Slack/Jira without becoming noise",
-      "Earlier signal in the loop — the mechanism behind 3× delivery velocity",
+      "Earlier signal in the loop — problems surface while the fix is still small",
     ],
   },
   {
@@ -37,7 +37,7 @@ const services = [
       "Root-cause classes: race, environment, selector, data, third-party",
       "Deterministic waits and network stubs where the product is not the test",
       "Quarantine with expiry — no eternal skipped specs",
-      "Dashboards that make <2% flake a managed number, not a wish",
+      "Dashboards that make flake rate a managed number, not a wish",
     ],
   },
   {
@@ -68,7 +68,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
+    <section id="services" className="scroll-mt-24 bg-cream py-3 md:py-10">
       <Container>
         <Reveal>
         <SectionHeading
@@ -76,28 +76,36 @@ export function Services() {
           title="Architecture first. Capacity second."
           description="Most QA spend goes into more tests on an unstable base. We invert that: a centralized framework, then pods that ship against it."
         />
-        <div className="mt-12 grid gap-4 lg:grid-cols-2">
-          {services.map((service) => (
-            <Frame key={service.index} className="flex flex-col p-6 sm:p-8">
-              <p className="inline-flex w-fit rounded-full border border-green-500/20 bg-green-500/10 px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-green-800">
-                {service.tag}
-              </p>
-              <h3 className="mt-4 text-xl font-semibold tracking-tight text-zinc-900">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-500 sm:text-base">
-                {service.lead}
-              </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-zinc-700">
-                {service.outcomes.map((outcome) => (
-                  <li key={outcome} className="flex gap-3">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" />
-                    <span>{outcome}</span>
-                  </li>
-                ))}
-              </ul>
-            </Frame>
-          ))}
+        <div className="mt-4 grid grid-cols-1 gap-2 md:mt-6 md:gap-3 lg:grid-cols-6">
+          {services.map((service, index) => {
+            const featured = index < 2;
+            return (
+              <Frame
+                key={service.index}
+                className={`flex flex-col px-5 py-3 md:p-5 ${featured ? "lg:col-span-3" : "lg:col-span-2"}`}
+              >
+                <p className="inline-flex w-fit rounded-full bg-pine px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-cream">
+                  {service.tag}
+                </p>
+                <h3
+                  className={`mt-2 font-semibold tracking-tight text-pine md:mt-3 ${
+                    featured ? "text-2xl" : "text-lg"
+                  }`}
+                >
+                  {service.title}
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-pine sm:text-base md:mt-2">{service.lead}</p>
+                <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-pine md:mt-3">
+                  {service.outcomes.map((outcome) => (
+                    <li key={outcome} className="flex gap-3">
+                      <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
+                      <span>{outcome}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Frame>
+            );
+          })}
         </div>
         </Reveal>
       </Container>

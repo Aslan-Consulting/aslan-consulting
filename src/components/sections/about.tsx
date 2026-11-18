@@ -5,12 +5,15 @@ export function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-16 sm:py-20"
+      className="scroll-mt-24 bg-cream py-3 md:py-10"
     >
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-medium tracking-[0.16em] text-green-700 uppercase">About</p>
-          <p className="mt-4 text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">
+          <p className="flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.14em] text-pine uppercase">
+            <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
+            About
+          </p>
+          <p className="mt-2 text-2xl font-semibold tracking-tight text-pine sm:text-3xl md:mt-3">
             Led by a lead SDET with 10 years in test automation, focused on Playwright.
           </p>
         </Reveal>

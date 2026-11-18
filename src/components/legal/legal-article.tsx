@@ -10,14 +10,15 @@ type LegalArticleProps = {
 export function LegalArticle({ kicker = "Legal", title, children }: LegalArticleProps) {
   return (
     <main id="main" className="flex-1">
-      <Container className="py-16 sm:py-20">
-        <p className="text-xs font-medium tracking-[0.16em] text-green-700 uppercase">
+      <Container className="py-10 sm:py-12">
+        <p className="flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-pine uppercase">
+          <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
           {kicker}
         </p>
-        <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+        <h1 className="mt-2 max-w-3xl text-3xl font-semibold tracking-tight text-pine sm:text-4xl">
           {title}
         </h1>
-        <article className="legal-copy mt-10 max-w-2xl">{children}</article>
+        <article className="legal-copy mt-6 max-w-2xl">{children}</article>
       </Container>
     </main>
   );
