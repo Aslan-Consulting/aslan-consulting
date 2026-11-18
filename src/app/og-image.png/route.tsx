@@ -65,9 +65,9 @@ export function GET() {
             fontWeight: 600,
           }}
         >
-          <span>&lt;2% flakiness</span>
-          <span>3× delivery velocity</span>
-          <span>40% fewer merge conflicts</span>
+          <span>Lead SDET</span>
+          <span>10 years in test automation</span>
+          <span>Playwright focus</span>
         </div>
       </div>
     ),

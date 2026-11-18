@@ -25,7 +25,7 @@ const services = [
       "Sharding, artifact retention, and retry policy with a stated cause",
       "Selectors for smoke vs. deep suites so merge queues stay honest",
       "Failure taxonomy wired into Slack/Jira without becoming noise",
-      "Earlier signal in the loop — the mechanism behind 3× delivery velocity",
+      "Earlier signal in the loop — problems surface while the fix is still small",
     ],
   },
   {
@@ -37,7 +37,7 @@ const services = [
       "Root-cause classes: race, environment, selector, data, third-party",
       "Deterministic waits and network stubs where the product is not the test",
       "Quarantine with expiry — no eternal skipped specs",
-      "Dashboards that make <2% flake a managed number, not a wish",
+      "Dashboards that make flake rate a managed number, not a wish",
     ],
   },
   {

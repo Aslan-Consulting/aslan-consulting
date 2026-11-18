@@ -1,7 +1,7 @@
 export const site = {
   name: "Testing Explained",
   legalName: "Aslan Consulting LLC",
-  legalLine: "Testing Explained is a brand of Aslan Consulting LLC",
+  legalLine: "Aslan Consulting LLC d/b/a Testing Explained",
   shortName: "Testing Explained",
   tagline: "Software testing, explained simply.",
   description:
@@ -27,24 +27,6 @@ export const footerQuickLinks = [
 export const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Service" },
-] as const;
-
-export const metrics = [
-  {
-    value: "<2%",
-    label: "Test flakiness",
-    detail: "Treated as an SLO, not a Slack thread.",
-  },
-  {
-    value: "3×",
-    label: "Delivery velocity",
-    detail: "Earlier, cheaper signal in the PR loop.",
-  },
-  {
-    value: "40%",
-    label: "Fewer merge conflicts",
-    detail: "Smaller, greener diffs from a shared platform.",
-  },
 ] as const;
 
 export const roles = [

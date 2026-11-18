@@ -9,7 +9,7 @@ export function Footer() {
         <div className="max-w-sm">
           <BrandLogo markClassName="h-12 w-12" />
           <p className="mt-4 text-sm leading-relaxed text-zinc-600">{site.legalLine}</p>
-          <p className="mt-3 text-xs text-zinc-500">© 2026 {site.legalName}. All rights reserved.</p>
+          <p className="mt-3 text-xs text-zinc-500">© 2026 {site.legalLine}. All rights reserved.</p>
           <div className="mt-5 flex items-center gap-3">
             <a
               href={site.instagram}
