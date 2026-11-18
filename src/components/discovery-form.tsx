@@ -29,7 +29,7 @@ const initial: DiscoveryPayload = {
 function FieldError({ id, message }: { id?: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-1.5 text-sm text-red-400" role="alert">
+    <p id={id} className="mt-1.5 text-sm text-red-700" role="alert">
       {message}
     </p>
   );
@@ -144,16 +144,16 @@ export function DiscoveryForm() {
   if (status === "success") {
     return (
       <div
-        className="rounded-xl border border-zinc-200 bg-zinc-50/80 p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-950/50"
+        className="rounded-xl border border-pine/25 bg-cream p-5 sm:p-6"
         role="status"
       >
-        <p className="text-xs font-medium tracking-[0.14em] text-green-600 uppercase dark:text-green-400">
+        <p className="text-xs font-semibold tracking-[0.14em] text-pine uppercase">
           Received
         </p>
-        <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+        <h3 className="mt-2 text-xl font-semibold tracking-tight text-pine">
           We have the brief.
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+        <p className="mt-2 text-sm leading-relaxed text-pine">
           {calendarUrl
             ? "Opening the calendar so you can pick a 30-minute window. Come ready to talk about the pipeline, not a pitch deck."
             : "A partner will reply to the work email you provided with 30-minute options. Come ready to talk about the pipeline, not a pitch deck."}
@@ -162,14 +162,14 @@ export function DiscoveryForm() {
           <p className="mt-4 text-sm">
             <a
               href={calendarUrl}
-              className="font-medium text-green-600 underline-offset-4 hover:underline dark:text-green-400"
+              className="font-medium text-pine underline decoration-gold underline-offset-4 hover:underline"
             >
               Continue to calendar
             </a>
-            <span className="text-zinc-500"> if you were not redirected.</span>
+            <span className="text-pine"> if you were not redirected.</span>
           </p>
         ) : (
-          <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+          <p className="mt-4 text-sm text-pine">
             Calendar booking is not configured on this environment. We will follow up by email.
           </p>
         )}
@@ -178,13 +178,13 @@ export function DiscoveryForm() {
   }
 
   const inputClass =
-    "mt-1.5 w-full rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:placeholder:text-zinc-600";
+    "mt-1.5 w-full rounded-xl border border-pine/30 bg-cream px-3 py-2.5 text-sm text-pine placeholder:text-pine/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine";
 
   return (
     <form onSubmit={onSubmit} noValidate className="relative grid gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor={ids.name} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+          <label htmlFor={ids.name} className="text-sm font-medium text-pine">
             Name
           </label>
           <input
@@ -201,7 +201,7 @@ export function DiscoveryForm() {
           <FieldError id={`${ids.name}-error`} message={shown("name")} />
         </div>
         <div>
-          <label htmlFor={ids.email} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+          <label htmlFor={ids.email} className="text-sm font-medium text-pine">
             Work email
           </label>
           <input
@@ -223,7 +223,7 @@ export function DiscoveryForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor={ids.company} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+          <label htmlFor={ids.company} className="text-sm font-medium text-pine">
             Company
           </label>
           <input
@@ -240,7 +240,7 @@ export function DiscoveryForm() {
           <FieldError id={`${ids.company}-error`} message={shown("company")} />
         </div>
         <div>
-          <label htmlFor={ids.role} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+          <label htmlFor={ids.role} className="text-sm font-medium text-pine">
             Role
           </label>
           <select
@@ -265,7 +265,7 @@ export function DiscoveryForm() {
       </div>
 
       <div>
-        <label htmlFor={ids.teamSize} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+        <label htmlFor={ids.teamSize} className="text-sm font-medium text-pine">
           Engineering org size
         </label>
         <select
@@ -292,7 +292,7 @@ export function DiscoveryForm() {
         onBlur={onStackBlur}
         aria-describedby={shown("stack") ? `${ids.stack}-error` : undefined}
       >
-        <legend className="text-sm font-medium text-zinc-800 dark:text-zinc-200">Current stack</legend>
+        <legend className="text-sm font-medium text-pine">Current stack</legend>
         <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
           {stacks.map((item) => {
             const checked = values.stack.includes(item);
@@ -301,8 +301,8 @@ export function DiscoveryForm() {
                 key={item}
                 className={`flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors ${
                   checked
-                    ? "border-green-400/40 bg-green-400/10 text-green-800 dark:text-green-300"
-                    : "border-zinc-200 text-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:hover:text-zinc-50"
+                    ? "border-pine bg-pine/10 text-pine"
+                    : "border-pine/30 text-pine"
                 }`}
               >
                 <input
@@ -315,8 +315,8 @@ export function DiscoveryForm() {
                   aria-hidden
                   className={`pointer-events-none h-3.5 w-3.5 rounded-md border ${
                     checked
-                      ? "border-green-400 bg-green-400"
-                      : "border-zinc-300 dark:border-zinc-700"
+                      ? "border-pine bg-pine"
+                      : "border-pine/40"
                   }`}
                 />
                 {item}
@@ -328,7 +328,7 @@ export function DiscoveryForm() {
       </fieldset>
 
       <div>
-        <label htmlFor={ids.challenge} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+        <label htmlFor={ids.challenge} className="text-sm font-medium text-pine">
           Current constraint
         </label>
         <textarea
@@ -347,7 +347,7 @@ export function DiscoveryForm() {
       </div>
 
       <div>
-        <label htmlFor={ids.preferredTime} className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+        <label htmlFor={ids.preferredTime} className="text-sm font-medium text-pine">
           Preferred window
         </label>
         <select
@@ -385,7 +385,7 @@ export function DiscoveryForm() {
       </div>
 
       {serverMessage ? (
-        <p className="text-sm text-red-400" role="alert">
+        <p className="text-sm text-red-700" role="alert">
           {serverMessage}
         </p>
       ) : null}
@@ -394,7 +394,7 @@ export function DiscoveryForm() {
         <Button type="submit" disabled={status === "submitting"}>
           {status === "submitting" ? "Sending…" : "Request a discovery call"}
         </Button>
-        <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-500">
+        <p className="text-xs leading-relaxed text-pine">
           Used to prepare the call. No newsletter, no sequence.
         </p>
       </div>

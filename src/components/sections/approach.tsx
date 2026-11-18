@@ -25,8 +25,8 @@ const steps = [
 
 function ProcessDiagram({ active }: { active: number }) {
   return (
-    <div className="rounded-xl border border-zinc-200/80 bg-white p-6" aria-hidden>
-      <p className="text-xs font-medium tracking-[0.16em] text-zinc-500 uppercase">Platform path</p>
+    <div className="rounded-xl border border-pine/25 bg-cream p-5 shadow-[0_8px_24px_rgb(8_48_32/0.08)]" aria-hidden>
+      <p className="text-xs font-semibold tracking-[0.14em] text-pine uppercase">Platform path</p>
       <ol className="mt-6 space-y-4">
         {steps.map((step, index) => {
           const built = index <= active;
@@ -36,15 +36,15 @@ function ProcessDiagram({ active }: { active: number }) {
               <span
                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
                   current
-                    ? "bg-green-600 text-white"
+                    ? "bg-pine text-cream"
                     : built
-                      ? "bg-green-100 text-green-800"
-                      : "bg-zinc-100 text-zinc-400"
+                      ? "bg-pine/10 text-pine"
+                      : "border border-pine/30 bg-cream text-pine"
                 }`}
               >
                 {step.index}
               </span>
-              <span className={`text-sm font-medium ${built ? "text-zinc-900" : "text-zinc-400"}`}>
+              <span className="text-sm font-medium text-pine">
                 {step.title}
               </span>
             </li>
@@ -82,7 +82,7 @@ export function Approach() {
   }, []);
 
   return (
-    <section id="how-it-works" className="scroll-mt-24 border-b border-zinc-200/80 bg-[#f7f6f2] py-20 sm:py-24">
+    <section id="how-it-works" className="scroll-mt-24 bg-cream py-8 sm:py-10">
       <Container>
         <Reveal>
           <SectionHeading
@@ -90,8 +90,8 @@ export function Approach() {
             title="How a director should buy quality work."
             description="Short discovery. Written architecture. Then either a standing platform, embedded pods, or both. No retainers that exist to 'stay in the mix.'"
           />
-          <div className="mt-12 lg:grid lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start lg:gap-10">
-            <ol className="grid gap-6">
+          <div className="mt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start lg:gap-6">
+            <ol className="grid gap-3">
               {steps.map((step, index) => (
                 <li
                   key={step.index}
@@ -99,11 +99,11 @@ export function Approach() {
                   ref={(node) => {
                     itemRefs.current[index] = node;
                   }}
-                  className="rounded-xl border border-zinc-200/80 bg-white p-6 lg:min-h-48"
+                  className="rounded-xl border border-pine/25 bg-cream p-5 shadow-[0_8px_24px_rgb(8_48_32/0.08)]"
                 >
-                  <p className="text-xs font-medium tracking-[0.14em] text-green-700 uppercase">{step.index}</p>
-                  <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-900">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-500">{step.body}</p>
+                  <p className="text-xs font-semibold tracking-[0.14em] text-pine uppercase">{step.index}</p>
+                  <h3 className="mt-2 text-lg font-semibold tracking-tight text-pine">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-pine">{step.body}</p>
                 </li>
               ))}
             </ol>

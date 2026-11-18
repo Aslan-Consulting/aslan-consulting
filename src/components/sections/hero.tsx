@@ -7,17 +7,17 @@ const credentials = ["Lead SDET", "10 years in test automation", "Playwright foc
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-zinc-200/80 bg-[#f7f6f2]">
-      <div className="pointer-events-none absolute inset-0 hero-glow" aria-hidden />
-      <Container className="relative py-16 text-center sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-cream">
+      <Container className="relative py-12 text-center sm:py-16">
         <Reveal>
-          <p className="text-xs font-medium tracking-[0.16em] text-green-700 uppercase">
+          <p className="flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.14em] text-pine uppercase">
+            <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-gold" />
             Testing Explained
           </p>
-          <h1 className="mx-auto mt-5 max-w-4xl text-[2.35rem] font-semibold leading-[1.12] tracking-tight text-zinc-900 sm:text-5xl lg:text-[3.15rem]">
+          <h1 className="mx-auto mt-4 max-w-4xl text-[2.6rem] font-bold leading-[0.98] tracking-[-0.045em] text-pine sm:text-6xl lg:text-[4.25rem]">
             A testing system your team can own, built to ship faster with fewer flakes.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-pine sm:text-lg">
             We design a single Playwright architecture your product org actually owns, then staff distributed SDET pods against it.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -28,11 +28,11 @@ export function Hero() {
           </div>
         </Reveal>
         <Reveal>
-          <ul className="mx-auto mt-14 grid max-w-5xl gap-4 text-left sm:grid-cols-3">
+          <ul className="mx-auto mt-8 grid max-w-5xl gap-3 text-left sm:grid-cols-3">
             {credentials.map((fact) => (
               <li key={fact}>
-                <Frame className="p-5 sm:p-6">
-                  <p className="text-lg font-semibold tracking-tight text-zinc-900">{fact}</p>
+                <Frame className="p-4 sm:p-5">
+                  <p className="text-lg font-semibold tracking-tight text-pine">{fact}</p>
                 </Frame>
               </li>
             ))}

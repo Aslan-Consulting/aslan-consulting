@@ -8,7 +8,7 @@ type FrameProps = {
 export function Frame({ children, className = "" }: FrameProps) {
   return (
     <div
-      className={`rounded-xl border border-zinc-200/80 bg-white shadow-lg shadow-zinc-950/5 transition-[border-color,background-color,box-shadow,transform] duration-200 hover:border-zinc-300 hover:shadow-xl ${className}`}
+      className={`rounded-xl border border-pine/25 bg-cream shadow-[0_8px_24px_rgb(8_48_32/0.08)] ${className}`}
     >
       {children}
     </div>

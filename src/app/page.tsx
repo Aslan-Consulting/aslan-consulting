@@ -9,20 +9,31 @@ import { Pricing } from "@/components/sections/pricing";
 import { PromptBook } from "@/components/sections/prompt-book";
 import { Services } from "@/components/sections/services";
 import { Waitlist } from "@/components/sections/waitlist";
+import { SectionDivider } from "@/components/ui/section-divider";
 
 export default function Home() {
   return (
     <main id="main" className="flex-1">
       <Hero />
+      <SectionDivider />
       <Services />
+      <SectionDivider />
       <About />
+      <SectionDivider />
       <CaseVisual />
+      <SectionDivider />
       <FlakeCalculator />
+      <SectionDivider />
       <Approach />
+      <SectionDivider />
       <Pricing />
+      <SectionDivider />
       <Faq />
+      <SectionDivider />
       <Waitlist />
+      <SectionDivider />
       <Discovery />
+      <SectionDivider />
       <PromptBook />
     </main>
   );

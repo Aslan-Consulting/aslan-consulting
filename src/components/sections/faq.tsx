@@ -33,22 +33,22 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-24 border-b border-zinc-200/80 bg-[#f7f6f2] py-20 sm:py-24">
+    <section id="faq" className="scroll-mt-24 bg-cream py-8 sm:py-10">
       <Container>
         <Reveal>
           <SectionHeading kicker="FAQ" title="Questions directors ask before the call." />
-          <div className="mt-10 divide-y divide-zinc-200 rounded-xl border border-zinc-200/80 bg-white">
+          <div className="mt-6 divide-y divide-pine/20 rounded-xl border border-pine/25 bg-cream shadow-[0_8px_24px_rgb(8_48_32/0.08)]">
             {faqs.map((item) => (
-              <details key={item.question} className="group px-5 py-4 sm:px-6">
-                <summary className="cursor-pointer list-none text-base font-medium text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 [&::-webkit-details-marker]:hidden">
+              <details key={item.question} className="group px-5 py-3 sm:px-6">
+                <summary className="cursor-pointer list-none text-base font-medium text-pine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine [&::-webkit-details-marker]:hidden">
                   <span className="flex items-center justify-between gap-4">
                     {item.question}
-                    <span aria-hidden className="text-zinc-400 group-open:rotate-45">
+                    <span aria-hidden className="text-pine group-open:rotate-45">
                       +
                     </span>
                   </span>
                 </summary>
-                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-600">{item.answer}</p>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-pine">{item.answer}</p>
               </details>
             ))}
           </div>

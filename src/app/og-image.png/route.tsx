@@ -13,26 +13,18 @@ export function GET() {
           flexDirection: "column",
           justifyContent: "space-between",
           background: "#f7f6f2",
-          color: "#18181b",
+          color: "#083020",
           padding: "72px 80px",
           fontFamily: "ui-sans-serif, system-ui, sans-serif",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(ellipse 70% 55% at 50% -10%, rgba(34,197,94,0.16), transparent 58%)",
-          }}
-        />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               display: "flex",
               alignItems: "center",
               gap: 14,
-              color: "#15803d",
+              color: "#083020",
               fontSize: 22,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -60,7 +52,7 @@ export function GET() {
           style={{
             display: "flex",
             gap: 36,
-            color: "#16a34a",
+            color: "#083020",
             fontSize: 22,
             fontWeight: 600,
           }}

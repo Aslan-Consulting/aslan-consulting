@@ -68,7 +68,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
+    <section id="services" className="scroll-mt-24 bg-cream py-8 sm:py-10">
       <Container>
         <Reveal>
         <SectionHeading
@@ -76,22 +76,22 @@ export function Services() {
           title="Architecture first. Capacity second."
           description="Most QA spend goes into more tests on an unstable base. We invert that: a centralized framework, then pods that ship against it."
         />
-        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+        <div className="mt-6 grid gap-3 lg:grid-cols-2">
           {services.map((service) => (
-            <Frame key={service.index} className="flex flex-col p-6 sm:p-8">
-              <p className="inline-flex w-fit rounded-full border border-green-500/20 bg-green-500/10 px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-green-800">
+            <Frame key={service.index} className="flex flex-col p-5">
+              <p className="inline-flex w-fit rounded-full bg-pine px-2.5 py-0.5 text-[0.7rem] font-medium tracking-wide text-cream">
                 {service.tag}
               </p>
-              <h3 className="mt-4 text-xl font-semibold tracking-tight text-zinc-900">
+              <h3 className="mt-3 text-xl font-semibold tracking-tight text-pine">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-500 sm:text-base">
+              <p className="mt-2 text-sm leading-relaxed text-pine sm:text-base">
                 {service.lead}
               </p>
-              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-zinc-700">
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-pine">
                 {service.outcomes.map((outcome) => (
                   <li key={outcome} className="flex gap-3">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" />
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" />
                     <span>{outcome}</span>
                   </li>
                 ))}

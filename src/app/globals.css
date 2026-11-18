@@ -2,31 +2,40 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+  Brand tokens. Only three colors:
+  - cream #f7f6f2 — the existing page background, approved
+  - pine  #083020 — sampled from the locked logo tile
+  - gold  #C4A46A — approved accent
+  Gold on cream is 2.19:1, so gold is decoration on cream (rules, diamonds, borders).
+  Text and labels on cream are pine (13.36:1). Gold text is used only on pine (6.10:1).
+  Shadows and translucent borders are the same pine, at a lower opacity. Not a fourth color.
+*/
 :root {
-  --bg: #f7f6f2;
-  --bg-elevated: rgb(255 255 255 / 0.86);
-  --fg: #18181b;
-  --fg-muted: #52525b;
-  --line: rgb(24 24 27 / 0.12);
-  --ring: #22c55e;
+  --cream: #f7f6f2;
+  --pine: #083020;
+  --gold: #c4a46a;
+  --bg: var(--cream);
+  --fg: var(--pine);
+  --line: rgb(8 48 32 / 0.22);
+  --ring: var(--pine);
   color-scheme: light;
 }
 
 .dark {
-  --bg: #09090b;
-  --bg-elevated: rgb(24 24 27 / 0.6);
-  --fg: #fafafa;
-  --fg-muted: #a1a1aa;
-  --line: rgb(39 39 42 / 0.8);
-  --ring: #22d3ee;
+  --bg: var(--pine);
+  --fg: var(--cream);
+  --line: rgb(196 164 106 / 0.45);
+  --ring: var(--gold);
   color-scheme: dark;
 }
 
 @theme inline {
+  --color-cream: var(--cream);
+  --color-pine: var(--pine);
+  --color-gold: var(--gold);
   --color-bg: var(--bg);
-  --color-bg-elevated: var(--bg-elevated);
   --color-fg: var(--fg);
-  --color-fg-muted: var(--fg-muted);
   --color-line: var(--line);
   --color-ring: var(--ring);
   --font-sans: var(--font-geist-sans);
@@ -38,8 +47,8 @@ html {
 
 html,
 body {
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--cream);
+  color: var(--pine);
 }
 
 body {
@@ -48,12 +57,8 @@ body {
 }
 
 ::selection {
-  background: rgb(34 197 94 / 0.28);
-  color: var(--fg);
-}
-
-.hero-glow {
-  background: radial-gradient(ellipse 70% 50% at 50% -8%, rgb(34 197 94 / 0.14), transparent 58%);
+  background: var(--gold);
+  color: var(--pine);
 }
 
 .skip-link {
@@ -62,8 +67,8 @@ body {
   top: -3rem;
   z-index: 80;
   border-radius: 0.75rem;
-  background: #18181b;
-  color: #fafafa;
+  background: var(--pine);
+  color: var(--cream);
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
   font-weight: 600;
@@ -71,6 +76,8 @@ body {
 
 .skip-link:focus {
   top: 1rem;
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 input,
@@ -127,7 +134,7 @@ html.motion .reveal.reveal-in {
 .legal-copy {
   font-size: 0.975rem;
   line-height: 1.7;
-  color: var(--fg-muted);
+  color: var(--pine);
 }
 
 .legal-copy p + p,
@@ -136,20 +143,17 @@ html.motion .reveal.reveal-in {
 }
 
 .legal-copy h2 {
-  margin-top: 2rem;
-  font-size: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--fg);
+  color: var(--pine);
 }
 
 .legal-copy a {
-  color: #15803d;
-  text-underline-offset: 3px;
-}
-
-.legal-copy a:hover {
+  color: var(--pine);
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -42,7 +42,7 @@ export function FlakeCalculator() {
   const shown = Number.isFinite(hours) ? hours.toLocaleString(undefined, { maximumFractionDigits: 1 }) : "0";
 
   return (
-    <section id="flake-cost" className="scroll-mt-24 border-b border-zinc-200/80 bg-white py-20 sm:py-24">
+    <section id="flake-cost" className="scroll-mt-24 bg-cream py-8 sm:py-10">
       <Container>
         <Reveal>
           <SectionHeading
@@ -50,10 +50,10 @@ export function FlakeCalculator() {
             title="What is flakiness costing you?"
             description="tests × (flake rate ÷ 100) × minutes lost × runs per month ÷ 60 = wasted hours per month."
           />
-          <Frame className="mt-10 p-6 sm:p-8">
+          <Frame className="mt-6 p-5">
             <div className="grid gap-4 sm:grid-cols-2">
               {fields.map((field) => (
-                <label key={field.key} className="block text-sm font-medium text-zinc-800">
+                <label key={field.key} className="block text-sm font-medium text-pine">
                   {field.label}
                   <input
                     type="number"
@@ -65,18 +65,18 @@ export function FlakeCalculator() {
                     onChange={(event) =>
                       setInput((current) => ({ ...current, [field.key]: event.target.value }))
                     }
-                    className="mt-2 w-full rounded-xl border border-zinc-200 bg-white px-3 py-2.5 text-sm font-normal text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
+                    className="mt-2 w-full rounded-xl border border-pine/30 bg-cream px-3 py-2.5 text-sm font-normal text-pine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine"
                   />
                 </label>
               ))}
             </div>
-            <p className="mt-6 font-mono text-sm leading-relaxed text-zinc-700">
+            <p className="mt-5 font-mono text-sm leading-relaxed text-pine">
               {numbers.tests} × ({numbers.flakeRate} ÷ 100) × {numbers.minutes} × {numbers.runs} ÷ 60 = {shown} hours
             </p>
-            <p className="mt-4 text-3xl font-semibold tracking-tight text-zinc-900 tabular-nums">
-              {shown} <span className="text-lg font-medium text-zinc-500">hours / month</span>
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-pine tabular-nums">
+              {shown} <span className="text-lg font-medium text-pine">hours / month</span>
             </p>
-            <p className="mt-2 text-sm text-zinc-500">Estimate only, based on the numbers you enter.</p>
+            <p className="mt-2 text-sm text-pine">Estimate only, based on the numbers you enter.</p>
           </Frame>
         </Reveal>
       </Container>
