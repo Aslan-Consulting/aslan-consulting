@@ -1,0 +1,249 @@
+{
+  "url": "http://localhost:3100/",
+  "capturedAt": "2026-11-18T20:39:04.652Z",
+  "browser": "Chrome/157.0.8103.51",
+  "viewports": [
+    {
+      "name": "desktop-1440",
+      "width": 1440,
+      "height": 900,
+      "mobile": false,
+      "screenshot": "desktop-1440-full.png",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 1,
+      "pageScale": 1,
+      "reducedMotion": true,
+      "scrollWidth": 1440,
+      "scrollHeight": 8706,
+      "bodyFont": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+      "sections": [
+        {
+          "tag": "header",
+          "id": null,
+          "heading": null,
+          "top": 0,
+          "height": 73,
+          "background": "lab(96.8791 -0.175118 2.05228 / 0.85)"
+        },
+        {
+          "tag": "section",
+          "id": null,
+          "heading": "A testing system your team can own, built to ship faster with fewer flakes.",
+          "top": 73,
+          "height": 754,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "services",
+          "heading": "Architecture first. Capacity second.",
+          "top": 827,
+          "height": 1459,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "about",
+          "heading": null,
+          "top": 2286,
+          "height": 265,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "example",
+          "heading": "Flake trend",
+          "top": 2551,
+          "height": 577,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "flake-cost",
+          "heading": "What is flakiness costing you?",
+          "top": 3128,
+          "height": 724,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "how-it-works",
+          "heading": "How a director should buy quality work.",
+          "top": 3852,
+          "height": 1008,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "pricing",
+          "heading": "Setup retainers and monthly ownership. Stated as numbers.",
+          "top": 4860,
+          "height": 1060,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "faq",
+          "heading": "Questions directors ask before the call.",
+          "top": 5919,
+          "height": 587,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "waitlist",
+          "heading": "Join the consulting waitlist",
+          "top": 6506,
+          "height": 336,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "discovery",
+          "heading": "A 30-minute working session, not a demo.",
+          "top": 6842,
+          "height": 1019,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "prompt-book",
+          "heading": "The AI Tester's Prompt Book",
+          "top": 7861,
+          "height": 551,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "footer",
+          "id": null,
+          "heading": null,
+          "top": 8412,
+          "height": 295,
+          "background": "rgb(255, 255, 255)"
+        }
+      ]
+    },
+    {
+      "name": "mobile-390",
+      "width": 390,
+      "height": 844,
+      "mobile": true,
+      "screenshot": "mobile-390-full.png",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 1,
+      "pageScale": 1,
+      "reducedMotion": true,
+      "scrollWidth": 390,
+      "scrollHeight": 11783,
+      "bodyFont": "Geist, \"Geist Fallback\", ui-sans-serif, system-ui, sans-serif",
+      "sections": [
+        {
+          "tag": "header",
+          "id": null,
+          "heading": null,
+          "top": 0,
+          "height": 73,
+          "background": "lab(96.8791 -0.175118 2.05228 / 0.85)"
+        },
+        {
+          "tag": "section",
+          "id": null,
+          "heading": "A testing system your team can own, built to ship faster with fewer flakes.",
+          "top": 73,
+          "height": 1048,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "services",
+          "heading": "Architecture first. Capacity second.",
+          "top": 1121,
+          "height": 2478,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "about",
+          "heading": null,
+          "top": 3599,
+          "height": 257,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "example",
+          "heading": "Flake trend",
+          "top": 3856,
+          "height": 411,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "flake-cost",
+          "heading": "What is flakiness costing you?",
+          "top": 4267,
+          "height": 894,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "how-it-works",
+          "heading": "How a director should buy quality work.",
+          "top": 5161,
+          "height": 1055,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "pricing",
+          "heading": "Setup retainers and monthly ownership. Stated as numbers.",
+          "top": 6216,
+          "height": 1793,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "faq",
+          "heading": "Questions directors ask before the call.",
+          "top": 8009,
+          "height": 587,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "waitlist",
+          "heading": "Join the consulting waitlist",
+          "top": 8596,
+          "height": 547,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "section",
+          "id": "discovery",
+          "heading": "A 30-minute working session, not a demo.",
+          "top": 9143,
+          "height": 1492,
+          "background": "rgb(247, 246, 242)"
+        },
+        {
+          "tag": "section",
+          "id": "prompt-book",
+          "heading": "The AI Tester's Prompt Book",
+          "top": 10635,
+          "height": 561,
+          "background": "rgb(255, 255, 255)"
+        },
+        {
+          "tag": "footer",
+          "id": null,
+          "heading": null,
+          "top": 11196,
+          "height": 587,
+          "background": "rgb(255, 255, 255)"
+        }
+      ]
+    }
+  ]
+}

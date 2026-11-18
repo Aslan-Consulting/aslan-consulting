@@ -1,0 +1,192 @@
+{
+  "url": "http://localhost:3100/",
+  "checkedAt": "2026-11-18T20:38:32.468Z",
+  "browser": "Chrome/157.0.8103.51",
+  "calculator": [
+    {
+      "entered": [
+        "500",
+        "5",
+        "10",
+        "200"
+      ],
+      "formula": "500 × (5 ÷ 100) × 10 × 200 ÷ 60 = 833.3 hours",
+      "result": "833.3 hours / month"
+    },
+    {
+      "entered": [
+        "1200",
+        "3",
+        "15",
+        "600"
+      ],
+      "formula": "1200 × (3 ÷ 100) × 15 × 600 ÷ 60 = 5,400 hours",
+      "result": "5,400 hours / month"
+    },
+    {
+      "entered": [
+        "80",
+        "12.5",
+        "4",
+        "90"
+      ],
+      "formula": "80 × (12.5 ÷ 100) × 4 × 90 ÷ 60 = 60 hours",
+      "result": "60 hours / month"
+    },
+    {
+      "entered": [
+        "300",
+        "150",
+        "10",
+        "100"
+      ],
+      "formula": "300 × (100 ÷ 100) × 10 × 100 ÷ 60 = 5,000 hours",
+      "result": "5,000 hours / month"
+    },
+    {
+      "entered": [
+        "250",
+        "0",
+        "10",
+        "100"
+      ],
+      "formula": "250 × (0 ÷ 100) × 10 × 100 ÷ 60 = 0 hours",
+      "result": "0 hours / month"
+    }
+  ],
+  "waitlist": {
+    "empty": {
+      "messages": [
+        {
+          "role": "alert",
+          "text": "Enter your email."
+        }
+      ],
+      "formVisible": true,
+      "button": "Join waitlist",
+      "apiCalls": []
+    },
+    "invalid": {
+      "messages": [
+        {
+          "role": "alert",
+          "text": "Enter a valid email."
+        }
+      ],
+      "formVisible": true,
+      "button": "Join waitlist",
+      "apiCalls": []
+    },
+    "valid": {
+      "messages": [
+        {
+          "role": "alert",
+          "text": "We could not send that signup. Try again in a moment."
+        }
+      ],
+      "formVisible": true,
+      "button": "Join waitlist",
+      "apiCalls": [
+        {
+          "url": "/api/waitlist",
+          "method": "POST",
+          "sent": "{\"email\":\"baseline-check@example.com\",\"website\":\"\"}",
+          "status": 502,
+          "received": "{\"ok\":false,\"message\":\"We could not send that signup. Try again in a moment.\"}"
+        }
+      ]
+    },
+    "duplicate": {
+      "messages": [
+        {
+          "role": "alert",
+          "text": "We could not send that signup. Try again in a moment."
+        }
+      ],
+      "formVisible": true,
+      "button": "Join waitlist",
+      "apiCalls": [
+        {
+          "url": "/api/waitlist",
+          "method": "POST",
+          "sent": "{\"email\":\"baseline-check@example.com\",\"website\":\"\"}",
+          "status": 502,
+          "received": "{\"ok\":false,\"message\":\"We could not send that signup. Try again in a moment.\"}"
+        }
+      ]
+    }
+  },
+  "discovery": {
+    "empty": {
+      "messages": [
+        {
+          "role": "alert",
+          "text": "Enter your name."
+        },
+        {
+          "role": "alert",
+          "text": "Enter a valid email."
+        },
+        {
+          "role": "alert",
+          "text": "Enter your company."
+        },
+        {
+          "role": "alert",
+          "text": "Select the closest role."
+        },
+        {
+          "role": "alert",
+          "text": "Select an engineering org size."
+        },
+        {
+          "role": "alert",
+          "text": "Select at least one current stack."
+        },
+        {
+          "role": "alert",
+          "text": "Enter the current constraint."
+        },
+        {
+          "role": "alert",
+          "text": "Choose a preferred window."
+        }
+      ],
+      "formVisible": true,
+      "button": "Request a discovery call",
+      "apiCalls": []
+    },
+    "invalid": {
+      "messages": [
+        {
+          "role": "alert",
+          "text": "Enter a valid email."
+        }
+      ],
+      "formVisible": true,
+      "button": "Request a discovery call",
+      "apiCalls": []
+    },
+    "stackTicked": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "valid": {
+      "messages": [],
+      "apiCalls": [
+        {
+          "url": "/api/discovery",
+          "method": "POST",
+          "sent": "{\"name\":\"Baseline Check\",\"email\":\"baseline-check@example.com\",\"company\":\"Baseline Co\",\"role\":\"Other\",\"teamSize\":\"1–10\",\"stack\":[\"Playwright\"],\"challenge\":\"TASK-003 baseline check. Not a real lead.\",\"preferredTime\":\"Next week\",\"website\":\"\"}",
+          "status": 200,
+          "received": "{\"ok\":true,\"bookingUrl\":\"https://example.com/discovery?name=Baseline+Check&email=baseline-check%40example.com\"}"
+        }
+      ],
+      "pageUrlAfterwards": "https://example.com/discovery?name=Baseline+Check&email=baseline-check%40example.com"
+    }
+  }
+}
