@@ -29,7 +29,7 @@ export function Header() {
           <BrandLogo priority />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -47,7 +47,7 @@ export function Header() {
           </ButtonLink>
           <button
             type="button"
-            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gold text-cream md:hidden ${focus}`}
+            className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gold text-cream lg:hidden ${focus}`}
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((value) => !value)}
@@ -63,7 +63,7 @@ export function Header() {
       </Container>
 
       {open ? (
-        <div id="mobile-nav" className="border-t border-gold bg-pine md:hidden">
+        <div id="mobile-nav" className="border-t border-gold bg-pine lg:hidden">
           <Container className="flex flex-col gap-1 py-3">
             {nav.map((item) => (
               <a
