@@ -3,16 +3,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
-  Brand tokens. Only three colors:
-  - cream #f7f6f2 — the existing page background, approved
+  Brand tokens.
+  - cream #FDF6E9 — page background
+  - card  #FFFDF7 — card surfaces on the cream page
   - pine  #083020 — sampled from the locked logo tile
   - gold  #C4A46A — approved accent
-  Gold on cream is 2.19:1, so gold is decoration on cream (rules, diamonds, borders).
-  Text and labels on cream are pine (13.36:1). Gold text is used only on pine (6.10:1).
-  Shadows and translucent borders are the same pine, at a lower opacity. Not a fourth color.
+  Gold on cream stays below AA, so gold is decoration on cream (rules, diamonds, borders).
+  Text and labels on cream are pine. Gold text is used only on pine.
+  Shadows and translucent borders are the same pine, at a lower opacity.
 */
 :root {
-  --cream: #f7f6f2;
+  --cream: #fdf6e9;
+  --card: #fffdf7;
   --pine: #083020;
   --gold: #c4a46a;
   --bg: var(--cream);
@@ -32,6 +34,7 @@
 
 @theme inline {
   --color-cream: var(--cream);
+  --color-card: var(--card);
   --color-pine: var(--pine);
   --color-gold: var(--gold);
   --color-bg: var(--bg);

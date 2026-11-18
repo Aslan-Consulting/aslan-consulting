@@ -12,7 +12,7 @@ export function GET() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f7f6f2",
+          background: "#fdf6e9",
           color: "#083020",
           padding: "72px 80px",
           fontFamily: "ui-sans-serif, system-ui, sans-serif",

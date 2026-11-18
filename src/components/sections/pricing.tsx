@@ -55,7 +55,7 @@ export function Pricing() {
               className={`flex flex-col rounded-xl p-5 shadow-[0_8px_24px_rgb(8_48_32/0.08)] ${
                 tier.featured
                   ? "border border-gold bg-pine text-cream"
-                  : "border border-pine/25 bg-cream text-pine"
+                  : "border border-pine/25 bg-card text-pine"
               }`}
             >
               <div className="flex items-start justify-between gap-4">

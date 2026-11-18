@@ -65,7 +65,7 @@ export function FlakeCalculator() {
                     onChange={(event) =>
                       setInput((current) => ({ ...current, [field.key]: event.target.value }))
                     }
-                    className="mt-2 w-full rounded-xl border border-pine/30 bg-cream px-3 py-2.5 text-sm font-normal text-pine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine"
+                    className="mt-2 w-full rounded-xl border border-pine/30 bg-card px-3 py-2.5 text-sm font-normal text-pine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine"
                   />
                 </label>
               ))}

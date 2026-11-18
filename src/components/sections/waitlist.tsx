@@ -93,7 +93,7 @@ export function Waitlist() {
                     onChange={(event) => setEmail(event.target.value)}
                     placeholder="Work email"
                     disabled={status === "submitting"}
-                    className="w-full rounded-xl border border-pine/30 bg-cream px-3 py-2.5 text-sm text-pine placeholder:text-pine/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine disabled:opacity-60"
+                    className="w-full rounded-xl border border-pine/30 bg-card px-3 py-2.5 text-sm text-pine placeholder:text-pine/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine disabled:opacity-60"
                     aria-invalid={Boolean(error)}
                     aria-describedby={error ? `${id}-error` : undefined}
                   />

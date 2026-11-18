@@ -144,7 +144,7 @@ export function DiscoveryForm() {
   if (status === "success") {
     return (
       <div
-        className="rounded-xl border border-pine/25 bg-cream p-5 sm:p-6"
+        className="rounded-xl border border-pine/25 bg-card p-5 sm:p-6"
         role="status"
       >
         <p className="text-xs font-semibold tracking-[0.14em] text-pine uppercase">
@@ -178,7 +178,7 @@ export function DiscoveryForm() {
   }
 
   const inputClass =
-    "mt-1.5 w-full rounded-xl border border-pine/30 bg-cream px-3 py-2.5 text-sm text-pine placeholder:text-pine/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine";
+    "mt-1.5 w-full rounded-xl border border-pine/30 bg-card px-3 py-2.5 text-sm text-pine placeholder:text-pine/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pine";
 
   return (
     <form onSubmit={onSubmit} noValidate className="relative grid gap-5">
@@ -299,7 +299,7 @@ export function DiscoveryForm() {
             return (
               <label
                 key={item}
-                className={`flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-pine has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-cream ${
+                className={`flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-pine has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-card ${
                   checked
                     ? "border-pine bg-pine/10 text-pine"
                     : "border-pine/30 text-pine"
